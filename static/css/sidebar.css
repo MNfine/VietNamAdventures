@@ -1,0 +1,38 @@
+.sidebar {
+    position: fixed; top: 80px; bottom: 120px; left: 0;
+    width: 15%; background-color: #ffffff; border-right: 1px solid #ddd;
+    z-index: 998; display: flex; flex-direction: column;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu { list-style: none; padding: 0; margin: 10px 0 0; }
+  
+  .menu li {
+    display: flex; align-items: center; margin-bottom: 15px;
+    cursor: pointer; font-size: 16px; color: #000;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  .menu li i {
+    margin-right: 10px; font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .menu li:hover {
+    color: #b26500;
+  }
+  
+  .menu li:hover i {
+    color: #b26500;
+  }
+  
+  .menu li.active {
+    background-color: #fcf4ec; padding: 5px 10px;
+    border-radius: 4px; font-weight: bold; color: #b26500;
+  }
+  
+  .menu-title {
+    margin-top: 20px; font-size: 14px; color: #555;
+  }
+  

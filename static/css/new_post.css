@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  height: 60px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  margin-left: 40px;
+}
+
+.nav-center {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 28px;
+  justify-content: flex-end;
+}
+
+.nav-center a {
+  text-decoration: none;
+  color: #5a5a3f;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: none;
+}
+
+.nav-center a:hover {
+  color: #94986a;
+}
+
+.nav-center a.active {
+  background-color: #94986a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #9b573b;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  color: #c16e39;
+}
+
+/* Khối chứa tiêu đề "Bài viết mới" */
+/* Wrapper cho cả tiêu đề */
+.new-post-title-wrapper {
+  max-width: 600px;       /* khớp với .new-post-wrapper */
+  margin: 20px 253px;      /* căn giữa, cách top 20px */
+  text-align: center;     /* căn text giữa */
+}
+
+/* Thanh tiêu đề */
+.new-post-title-wrapper h2 {
+  margin-left: 70px;              /* bỏ margin mặc định */
+  padding: 10px 0;        /* padding dọc 10px */
+  font-size: 18px;        
+  font-weight: bold;
+  color: #fff;
+  background-color: #c79273;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 30%;            /* chiếm hết wrapper */
+  box-sizing: border-box; /* bao gồm padding trong width */
+}
+  
+  /* Khối chứa toàn bộ bài viết mới */
+  .new-post-wrapper {
+    background-color: #fff; /* Màu nền trắng */
+    padding: 20px;
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ nhẹ */
+    max-width: 700px; /* Tăng chiều rộng */
+    margin: 0 auto; /* Căn giữa container */
+    margin-top: 20px; /* Khoảng cách trên */
+  }
+  
+  /* Form bài viết mới */
+  .new-post-form label {
+    display: block;
+    margin-bottom: 10px; /* Giảm khoảng cách dưới */
+    font-weight: bold;
+    color: #555; /* Màu chữ nhạt hơn */
+    font-size: 14px; /* Giảm cỡ chữ */
+  }
+  
+  .new-post-form {
+    height: 400px;
+  }
+  
+  .new-post-form input,
+  .new-post-form textarea {
+    width: 97%;
+    padding: 10px; /* Tăng padding */
+    margin-top: 5px;
+    border: 1px solid #ccc; /* Viền nhạt */
+    border-radius: 4px;
+    font-size: 14px; /* Tăng cỡ chữ */
+    background-color: #fff;
+  }
+  
+  .new-post-form textarea {
+    height: 223px; /* Tăng chiều cao */
+    resize: none; /*Không cho phép thay đổi kích thước */
+  }
+  
+  /* Container chứa các nút hành động */
+.form-actions {
+  padding: 10px 20px; /* Đồng nhất padding */
+  height: 40px; /* Chiều cao cố định */
+  border: none;
+  display: flex;
+  justify-content: center; /* căn giữa cả nhóm */
+  align-items: center;
+  gap: 20px;          /* khoảng cách giữa nút Thêm ảnh và nhóm action-buttons */
+}
+
+/* Nhóm nút Lưu nháp + Xác nhận */
+.action-buttons {
+  display: flex;
+  gap: 30px;          /* khoảng cách giữa hai nút trong nhóm */
+}
+
+.form-actions button {
+  padding: 12px 24px;             /* rộng vừa phải */
+  border-radius: 50px;            /* pill shape */
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Giữ nguyên style riêng cho từng nút */
+/* Thêm ảnh */
+.add-image-btn {
+  background-color: #64b5f6;      /* màu xanh nhạt hơn */
+  color: #fff;
+}
+.add-image-btn:hover {
+  background-color: #42a5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Lưu nháp */
+.save-draft-btn {
+  background-color: #f0e4b8;      /* vàng nhạt dễ chịu */
+  color: #555;
+}
+.save-draft-btn:hover {
+  background-color: #e0d8a0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Xác nhận */
+.publish-btn {
+  background-color: #f7a278;      /* cam đào tươi tắn */
+  color: #fff;
+}
+.publish-btn:hover {
+  background-color: #e58d4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

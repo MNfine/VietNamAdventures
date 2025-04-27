@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Diễn đàn</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+  <link rel="stylesheet" href="/static/css/forum.css">
+  <link rel="stylesheet" href="/static/css/sidebar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  
+  <div class="App">
+    <header class="header">
+      <div class="logo">
+        <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+      </div>
+      <nav>
+        <div class="nav-center">
+          <a href="/">Trang chủ</a>
+          <a href="/posts">Bài viết</a>
+          <a href="/game">Game</a>
+          <a href="/forum" class="active">Diễn đàn</a>
+          <a href="/feedback">Góp ý</a>
+        </div>
+        <div class="nav-icons">
+          <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+          <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+        </div>
+      </nav>      
+    </header>
+
+    {% include 'sidebar.html' %}
+
+    <main id="body-content">
+      <div class="forum-container">
+        <div class="forum-actions">
+          <div class="forum-search">
+            <input type="text" class="search-input" placeholder="Tìm kiếm bài viết...">
+          </div>
+          <div class="forum-buttons">
+            <button class="btn register-btn" id="btnRegister">Đăng ký</button>
+            <button class="btn login-btn" id="btnLogin">Đăng nhập</button>
+          </div>
+        </div>
+
+        <div class="forum-filters-actions">
+          <div class="forum-filters">
+            <button class="filter-btn active" id="btnLatest">Mới nhất</button>
+            <button class="filter-btn" id="btnPopular">Nổi bật nhất</button>
+          </div>
+          <div class="forum-post-actions">
+            <button class="add-post-btn" id="btnAddPost">Bạn muốn thêm bài viết?</button>
+          </div>
+        </div>
+
+        <div class="forum-body">
+          <section class="forum-content" id="forumContent"></section>
+          <aside class="forum-suggestions">
+            <h4>Những bài viết nên đọc</h4>
+            <ul id="suggestionsList"></ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <img src="static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+        <div class="footer-contact">
+          <p>Liên hệ: <a href="mailto:mandimninf@gmail.com">mandimnif@gmail.com</a></p>
+          <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+          <p>© 2025 M&amp;M</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/forum.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

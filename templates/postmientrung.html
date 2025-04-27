@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/postmientrung.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+    </div>
+    <nav>
+      <div class="nav-center">
+        <a href="/">Trang chủ</a>
+        <a href="/posts" class="active">Bài viết</a>
+        <a href="/game">Game</a>
+        <a href="/forum">Diễn đàn</a>
+        <a href="/feedback">Góp ý</a>
+      </div>
+      <div class="nav-icons">
+        <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+        <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </nav>      
+  </header>
+  
+  <div id="toc">
+    <label for="Huế"></label>
+    <select id="Huế" onchange="navigateToSection('Huế', this.value)">
+        <option value="Huế">HUẾ</option>
+        <option value="Danh lam thắng cảnh-1">Danh lam thắng cảnh</option>
+        <option value="Ẩm thực-1">Ẩm thực</option>
+    </select>
+  
+    <select id="ĐN" onchange="navigateToSection('ĐN', this.value)">
+        <option value="ĐN">ĐÀ NẴNG</option>
+        <option value="Thông tin">Thông tin</option>
+        <option value="Danh lam thắng cảnh-2">Danh lam thắng cảnh</option>
+        <option value="Văn hoá - lễ hội-2">Văn hóa - Lễ hội</option>
+    </select>
+  
+    <select id="QN" onchange="navigateToSection('QN', this.value)">
+        <option value="QN">QUẢNG NAM</option>
+        <option value="Danh lam thắng cảnh-3">Danh lam thắng cảnh</option>
+        <option value="Văn hoá - lễ hội-3">Văn hoá - Lễ hội</option>
+        <option value="Ẩm thực-3">Ẩm thực</option>
+    </select>
+  
+    <select id="NA" onchange="navigateToSection('NA', this.value)">
+        <option value="NA">NGHỆ AN</option>
+        <option value="Danh lam thắng cảnh-4">Danh lam thắng cảnh</option>
+        <option value="Văn hoá - lễ hội-4">Văn hoá - Lễ hội</option>
+        <option value="Ẩm thực-4">Ẩm thực</option>
+    </select>
+  
+    <select id="KH" onchange="navigateToSection('KH', this.value)">
+        <option value="KH">KHÁNH HÒA</option>
+        <option value="Danh lam thắng cảnh-5">Danh lam thắng cảnh</option>
+        <option value="Văn hoá - lễ hội-5">Văn hoá - Lễ hội</option>
+        <option value="Ẩm thực-5">Ẩm thực</option>
+    </select>
+
+    <select id="NT" onchange="navigateToSection('NT', this.value)">
+      <option value="NT">NINH THUẬN</option>
+      <option value="Danh lam thắng cảnh-6">Danh lam thắng cảnh</option>
+      <option value="Văn hoá - lễ hội-6">Văn hoá - Lễ hội</option>
+      <option value="Ẩm thực-6">Ẩm thực</option>
+  </select>
+  </div>
+
+  <!-- Phần body -->
+  <main class="container">
+    <div class="banner" id="Huế">
+        <img class="main-image" src="/static/images/ảnh huế/huế - main.png" alt="Đại Nội Huế">
+        <div class="banner-content">
+            <h1 class="animate-title">Huế</h1>
+            <p class="description" id="Danh lam thắng cảnh-1">
+                Huế nằm ở dải đất hẹp của miền Trung Việt Nam. Thành phố là trung tâm về nhiều mặt của miền Trung như văn hoá,
+                chính trị, giáo dục, du lịch... Với dòng sông Hương và những di sản để lại của triều đại phong kiến, Huế, còn
+                gọi là đất Thần Kinh hay xứ thơ, là một trong những thành phố được nhắc tới nhiều trong thơ văn và âm nhạc Việt
+                Nam. Thành phố có hai danh hiệu UNESCO ở Việt Nam. Huế là đô thị cấp quốc gia của Việt Nam và cố đô của Việt Nam
+                thời phong kiến dưới triều nhà Nguyễn (1802 - 1945).
+            </p>
+        </div>
+    </div>
+
+    <div class="cards" >
+        <div class="card">
+            <div class="card-image">
+                <img src="/static/images/ảnh huế/đại nội huế.png" alt="Đại Nội Huế">
+                <div class="image-overlay"></div> <!-- Thêm lớp phủ cho hình ảnh -->
+            </div>
+            <h3>Đại Nội Huế</h3>
+            <p>Nằm ngay bên bờ sông Hương thơ mộng, Đại Nội Huế là di tích với nhiều công trình kiến trúc nguy nga thể hiện
+                quyền lực tối cao của các vị vua triều Nguyễn. Đại Nội bao gồm Hoàng Thành và Tử Cấm Thành, được bảo bọc bởi
+                khu vực Kinh thành.</p>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/static/images/ảnh huế/chùa thiên mụ.jpg" alt="Chùa Thiên Mụ">
+                <div class="image-overlay"></div>
+            </div>
+            <h3>Chùa Thiên Mụ</h3>
+            <p>Chùa Thiên Mụ hay còn được gọi là Chùa Linh Mụ là một trong những ngôi chùa cổ và nổi tiếng nhất xứ Huế.
+                Chùa nằm trên đồi Hà Khê, hướng ra sông Hương, thu hút khách tham quan bởi vẻ đẹp cổ kính và linh thiêng.
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="/static/images/ảnh huế/lăng khải định.png" alt="Lăng Khải Định">
+                <div class="image-overlay"></div>
+            </div>
+            <h3>Lăng Khải Định</h3>
+            <p>Lăng Khải Định, hay còn được gọi là Ứng Lăng, nổi bật với kiến trúc kết hợp giữa phong cách Á – Âu, cổ điển –
+                hiện đại. Đây là nơi yên nghỉ của vị vua thứ 12 triều Nguyễn, đồng thời là công trình thu hút nhiều du khách
+                trong và ngoài nước bởi nét độc đáo trong kiến trúc.</p>
+        </div>
+    </div>
+
+<!-- Đường kẻ phân chia -->
+<div class="divider"></div>
+
+<!-- Phần mới (Nhã nhạc cung đình Huế, Sông Hương, Cầu Tràng Tiền) -->
+<div class="cards-section">
+  <!-- Bên trái: 2 card nhỏ xếp dọc -->
+  <div class="cards-left">
+    <div class="card-item">
+      <div class="card-image small-image">
+        <img src="/static/images/ảnh huế/sông hương.jpg" alt="Sông Hương">
+        <div class="image-overlay"></div>
+      </div>
+      <h3 class="section-title">Sông Hương</h3>
+      <p class="section-description">
+        Sông Hương là biểu tượng thơ mộng của Huế, uốn lượn nhẹ nhàng qua lòng thành phố. Với làn nước trong xanh, đôi bờ phủ đầy cây cỏ và di tích cổ kính.
+      </p>
+    </div>
+
+    <div class="card-item">
+      <div class="card-image small-image">
+        <img src="/static/images/ảnh huế/cầu tràng tiền.jpg" alt="Cầu Tràng Tiền">
+        <div class="image-overlay"></div>
+      </div>
+      <h3 class="section-title">Cầu Tràng Tiền</h3>
+      <p class="section-description">
+        Cầu Tràng Tiền (hay còn gọi là Cầu Trường Tiền) là cây cầu đầu tiên được xây dựng để bắc ngang qua Hương Giang. Một bên đầu cầu thuộc phường Phú Hội và đầu bên kia thuộc phường Phú Hòa.
+      </p>
+    </div>
+  </div>
+  <!-- Bên phải: 1 ảnh lớn căn giữa theo chiều cao -->
+<div class="cards-right">
+  <div class="card-item">
+    <div class="card-image large-image">
+      <img src="/static/images/ảnh huế/nhã nhạc.png" alt="Nhã nhạc cung đình Huế">
+      <div class="image-overlay"></div>
+    </div>
+    <h3 class="section-title">Nhã nhạc cung đình Huế</h3>
+    <p class="section-description">
+      Nhã nhạc cung đình Huế là loại hình âm nhạc truyền thống được biểu diễn trong các nghi lễ triều đình thời Nguyễn.
+    </p>
+  </div>
+</div>
+</main>
+<!-- PHẦN ẨM THỰC -->
+<div class="am-thuc-section" id="Ẩm thực-1">
+  <hr class="am-thuc-divider">
+  <h2 class="section-heading"><span class="highlight">ẨM THỰC</span></h2>
+
+  <div class="am-thuc-content">
+    <!-- Bún bò Huế -->
+    <div class="bun-bo">
+      <img src="/static/images/ảnh huế/bún bò huế.jpg" alt="Bún bò Huế">
+      <h3 class="food-title">Bún bò Huế</h3>
+      <p class="food-description">
+        Món ăn trứ danh, nổi tiếng khắp cả nước. Nước dùng được ninh từ xương bò và giò heo, kết hợp mắm ruốc Huế, sả và ớt tạo nên vị cay nhẹ, đậm đà, dậy mùi thơm đặc trưng. Bún được ăn kèm với thịt bò bắp, giò heo, chả Huế và rau sống – là sự hài hòa giữa nhiều tầng vị giác.
+      </p>
+    </div>
+
+    <!-- Các loại bánh Huế -->
+    <div class="banh-hue">
+      <div class="banh-items">
+        <div class="banh-item">
+          <img src="/static/images/ảnh huế/bánh nậm.png" alt="Bánh nậm">
+          <h4>Bánh nậm</h4>
+        </div>
+        <div class="banh-item">
+          <img src="/static/images/ảnh huế/bánh bột lọc.png" alt="Bánh bột lọc">
+          <h4>Bánh bột lọc</h4>
+        </div>
+        <div class="banh-item">
+          <img src="/static/images/ảnh huế/bánh bèo chén.jpg" alt="Bánh bèo chén">
+          <h4>Bánh bèo chén</h4>
+        </div>
+      </div>
+
+      <!-- Mô tả chung -->
+      <div class="banh-description">
+        Những món bánh truyền thống được gói ghém khéo léo trong từng chiếc lá dong, lá chuối. Bánh mềm, nhân tôm thịt thơm lừng, ăn cùng nước mắm pha chua ngọt. Bánh bột lọc Huế đặc biệt nổi tiếng với loại bánh trần và bánh gói, nhân tôm cháy mặn mà.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ĐÀ NẴNG -->
+<div class="region-section" id="ĐN">
+  <div class="banner-content">
+    <h1 class="animate-title">ĐÀ NẴNG</h1>
+  </div>
+  <!-- Ba hình nằm chung một hàng -->
+  <div class="image-row">
+    <!-- Cầu Vàng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh đà nẵng/cầu vàng.png" alt="Cầu Vàng">
+      <p><strong>Cầu Vàng</strong> – điểm check-in nổi tiếng thu hút du khách trong và ngoài nước.</p>
+    </div>
+
+    <!-- Lễ hội Cầu Ngư -->
+    <div class="image-item">
+      <img src="/static/images/ảnh đà nẵng/cầu ngư đà nẵng.png" alt="Lễ hội Cầu Ngư">
+      <p><strong>Lễ hội Cầu Ngư</strong> – lễ hội truyền thống để tưởng nhớ cá Ông – vị thần biển linh thiêng phù hộ ngư dân ra khơi bình an, tôm cá đầy khoang.</p>
+    </div>
+
+    <!-- Cầu Rồng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh đà nẵng/cầu rồng.png" alt="Cầu Rồng">
+      <p><strong>Cầu Rồng</strong> – cây cầu bắc qua sông Hàn, nổi bật với hình rồng có thể phun lửa và nước, là biểu tượng hiện đại của thành phố.</p>
+    </div>
+  </div>
+
+  <!-- Đường kẻ và chữ “THÔNG TIN” ở giữa -->
+  <div class="divider">
+    <span class="divider-text">THÔNG TIN</span>
+  </div>
+
+  <!-- Thông tin và banner nằm cạnh nhau -->
+  <div class="info-section" id="Thông tin">
+    <div class="info-image">
+      <img src="/static/images/ảnh đà nẵng/banner đà nẵng.png" alt="Welcome to Đà Nẵng">
+    </div>
+    <div class="info-text highlight-box">
+      <p><strong>Đà Nẵng</strong>, một trong những thành phố lớn nhất miền Trung Việt Nam, nổi bật với vẻ đẹp tự nhiên hùng vĩ, bãi biển dài thơ mộng và những di tích lịch sử sâu sắc.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DANH LAM THẮNG CẢNH ĐÀ NẴNG -->
+<div class="landmark-section" id="Danh lam thắng cảnh-2">
+  <h2 class="section-heading"><span class="highlight">KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH ĐÀ NẴNG</span></h2>
+  <div class="landmark-grid">
+    <!-- Bà Nà Hills -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh đà nẵng/bà nà hills.png" alt="Bà Nà Hills">
+      <p><strong>Bà Nà Hills:</strong> Được ví như “châu Âu thu nhỏ trong lòng Đà Nẵng”</p>
+    </div>
+
+    <!-- Ngũ Hành Sơn -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh đà nẵng/ngũ hành sơn.png" alt="Ngũ Hành Sơn">
+      <p><strong>Ngũ Hành Sơn:</strong> Cụm 5 ngọn núi đá vôi mang tên ngũ hành Kim – Mộc – Thủy – Hỏa – Thổ</p>
+    </div>
+
+    <!-- Bán đảo Sơn Trà -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh đà nẵng/bán đảo sơn trà.png" alt="Bán đảo Sơn Trà">
+      <p><strong>Bán đảo Sơn Trà:</strong> Nơi có chùa Linh Ứng với tượng Phật Quan Âm cao nhất Việt Nam</p>
+    </div>
+
+    <!-- Cầu Sông Hàn -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh đà nẵng/cầu sông hàn.png" alt="Cầu Sông Hàn">
+      <p><strong>Cầu Sông Hàn:</strong> Cây cầu quay đầu tiên và duy nhất tại Việt Nam</p>
+    </div>
+  </div>
+</div>
+
+<!-- Phần Lễ hội -->
+<div class="festival-section" id="Văn hoá - lễ hội-2">
+  <h2 class="section-heading"><span class="highlight">VĂN HÓA - LỄ HỘI</span></h2>
+    <div class="festival-content">
+        <!-- Lễ hội pháo hoa quốc tế Đà Nẵng (DIFF) -->
+        <div class="festival-item">
+            <div class="festival-info">
+                <div class="festival-image">
+                    <img src="/static/images/ảnh đà nẵng/lễ hội pháo hoa.png" alt="Lễ hội pháo hoa quốc tế Đà Nẵng">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="festival-description with-frame-bg">
+                  <h3 class="section-title">Lễ hội pháo hoa quốc tế Đà Nẵng (DIFF)</h3>
+                  <p class="section-description">Sự kiện “thương hiệu” được tổ chức thường niên vào mùa hè, quy tụ các đội pháo hoa hàng đầu thế giới. Mỗi năm, lễ hội mang đến một chủ đề mới mẻ, sáng tạo, biến sông Hàn thành sân khấu ánh sáng, nghệ thuật và âm nhạc rực rỡ. Với những màn trình diễn hoành tráng và đậm chất nghệ thuật, DIFF đã trở thành điểm hẹn hấp dẫn, thu hút hàng triệu lượt du khách trong nước và quốc tế. Đây là một trong những sự kiện đặc sắc góp phần khẳng định vị thế du lịch của Đà Nẵng trên bản đồ thế giới.</p>
+              </div>
+            </div>
+        </div>
+
+        <!-- Lễ hội đường phố và lễ hội Carnival Sun World Ba Na Hills -->
+        <div class="festival-item">
+            <div class="festival-info reverse">
+                <div class="festival-image">
+                    <img src="/static/images/ảnh đà nẵng/lễ hội đường phố.png" alt="Lễ hội Carnival Sun World Ba Na Hills">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="festival-description with-frame-bg">
+                    <h3 class="section-title">Lễ hội đường phố và lễ hội Carnival Sun World Ba Na Hills</h3>
+                    <p class="section-description">Những màn trình diễn diễu hành hoành tráng, hóa trang rực rỡ và không khí tưng bừng phấn khích trên đỉnh núi Chúa “châu Âu giữa lòng Đà Nẵng”, làm sống động không khí du lịch quanh năm.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Đường kẻ phân chia -->
+<div class="divider"></div>
+<main class="container" id="QN">
+<div class="banner"> 
+  <div class="banner-content">
+      <h1 class="animate-title">QUẢNG NAM</h1>
+      <p class="description">
+        Quảng Nam, một tỉnh nằm ở miền Trung Việt Nam, nổi tiếng với phong cảnh thiên nhiên tươi đẹp, nền văn hóa đặc sắc và những di sản lịch sử quý giá. Tỉnh này không chỉ là điểm đến du lịch hấp dẫn mà còn là nơi lưu giữ những giá trị văn hóa truyền thống lâu đời, tạo nên một không gian sống động giữa các di tích, làng nghề, và lễ hội.
+      </p>
+      <img class="main-image" src="/static/images/ảnh quảng nam/banner quảng nam.png" alt="Đại Nội Huế">
+  </div>
+</div>
+</main>
+<div class="landmark-section" id="Danh lam thắng cảnh-3">
+  <h2 class="section-heading"><span class="highlight">KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH QUẢNG NAM</span></h2>
+  <div class="landmark-grid">
+    <!-- Bà Nà Hills -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh quảng nam/phố cổ hội an.png" alt="Bà Nà Hills">
+      <p><strong>Hội An:</strong>  phố cổ ven sông nổi tiếng với kiến trúc cổ kính, đèn lồng rực rỡ và văn hoá giao thoa Đông – Tây.</p>
+    </div>
+
+    <!-- Ngũ Hành Sơn -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh quảng nam/thánh địa mỹ sơn.png" alt="Ngũ Hành Sơn">
+      <p><strong>Thánh địa Mỹ Sơn:</strong>  quần thể đền tháp Chăm Pa cổ, mang đậm dấu ấn văn hóa – tôn giáo Hindu giáo. </p>
+    </div>
+
+    <!-- Bán đảo Sơn Trà -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh quảng nam/làng mộc kim bồng.png">
+      <p><strong>Làng mộc Kim Bồng:</strong> nổi tiếng với nghề mộc truyền thống lâu đời, chuyên sản xuất các sản phẩm gỗ tinh xảo.</p>
+    </div>
+
+    <!-- Cầu Sông Hàn -->
+    <div class="landmark-item">
+      <img src="/static/images/ảnh quảng nam/chùa cầu.png" alt="Cầu Sông Hàn">
+      <p><strong>Chùa Cầu:</strong> một biểu tượng của Hội An, đã được in lên đồng tiền 20.000 đồng, là công trình kiến trúc Nhật Bản duy nhất trong khu phố cổ.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Phần Lễ hội -->
+<div class="festival-section" id="Văn hoá - lễ hội-3">
+  <h2 class="section-heading"><span class="highlight">VĂN HÓA - LỄ HỘI</span></h2>
+    <div class="festival-content">
+        <!-- Lễ hội pháo hoa quốc tế Đà Nẵng (DIFF) -->
+        <div class="festival-item">
+            <div class="festival-info">
+                <div class="festival-image">
+                    <img src="/static/images/ảnh quảng nam/lễ hội đua thuyền.png" alt="Lễ hội pháo hoa quốc tế Đà Nẵng">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="festival-description with-frame-bg">
+                  <h3 class="section-title">Lễ hội đua thuyền Quảng Nam - Tết Nguyên Đán </h3>
+                  <p class="section-description">Đây là hoạt động thể thao - văn hóa truyền thống thu hút đông đảo người dân tham gia và cổ vũ. Các đội đua tranh tài quyết liệt trên sông, mang đậm tinh thần đoàn kết và bản sắc của cư dân vùng sông nước.</p>
+              </div>
+            </div>
+        </div>
+
+        <!-- Lễ hội đường phố và lễ hội Carnival Sun World Ba Na Hills -->
+        <div class="festival-item">
+            <div class="festival-info">
+                <div class="festival-image">
+                    <img src="/static/images/ảnh quảng nam/lễ hội cầu bông.png" alt="Lễ hội Carnival Sun World Ba Na Hills">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="festival-description with-frame-bg">
+                    <h3 class="section-title">Lễ hội Cầu Bông - tháng Giêng âm lịch</h3>
+                    <p class="section-description">Đây là lễ hội truyền thống của người dân vùng ven sông Thu Bồn, thường tổ chức vào đầu mùa vụ nhằm cầu cho mùa màng tốt tươi, mưa thuận gió hòa. </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="festival-item">
+          <div class="festival-info">
+              <div class="festival-image">
+                  <img src="/static/images/ảnh quảng nam/lễ hội hoa đăng.png" alt="Lễ hội Carnival Sun World Ba Na Hills">
+                  <div class="image-overlay"></div>
+              </div>
+              <div class="festival-description with-frame-bg">
+                  <h3 class="section-title">Lễ hội hoa đăng Hội An - ngày rằm âm lịch</h3>
+                  <p class="section-description">Toàn bộ phố cổ sẽ tắt đèn điện và thắp sáng bằng đèn lồng, tái hiện không gian xưa của đô thị Hội An. Đây là dịp để tôn vinh vẻ đẹp văn hóa truyền thống với các hoạt động đặc sắc.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<!-- PHẦN ẨM THỰC -->
+<div class="am-thuc-section" id="Ẩm thực-3">
+  <hr class="am-thuc-divider">
+  <h2 class="section-heading"><span class="highlight">ẨM THỰC</span></h2>
+
+  <div class="am-thuc-content">
+    <!-- Bún bò Huế -->
+    <div class="bun-bo">
+      <img src="/static/images/ảnh quảng nam/mì quảng.png" alt="Bún bò Huế">
+      <h3 class="food-title">Mì quảng</h3>
+      <p class="food-description">
+        Một món ăn đặc trưng của Quảng Nam và là niềm tự hào của người dân nơi đây. Món mì này có sợi mì vàng ươm, mềm dai và được chế biến với nước dùng đậm đà nhưng không quá nhiều. Điều đặc biệt là nước dùng không phải là dạng súp mà chỉ vừa đủ để thấm vào mì, tạo nên hương vị đậm đà nhưng không ngán.
+      </p>
+    </div>
+
+ <!-- Cột bên phải: Mì Cao Lầu & Bánh Thuẫn -->
+<div style="width: 100%; flex-direction: column; gap: 40px;">
+
+  <!-- Mì cao lầu -->
+  <div>
+    <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px; margin-top: -20px;">Mì cao lầu</h3>
+
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Hình ảnh -->
+      <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+        <img src="/static/images/ảnh quảng nam/mì cao lầu.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Chú thích -->
+      <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+          Chỉ có tại Hội An, cao lầu mới giữ được đúng hương vị truyền thống. Món này được làm từ mì cao lầu kết hợp với thịt heo xá xíu, rau sống và nước dùng đặc biệt được chế biến từ nước giếng Bá Lễ. Nước dùng của cao lầu có vị ngọt thanh, được chế biến từ các nguyên liệu như thịt heo, xương và gia vị đặc trưng của vùng đất này.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bánh thuẫn -->
+  <div>
+    <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px;">Bánh thuẫn</h3>
+
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Hình ảnh -->
+      <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+        <img src="/static/images/ảnh quảng nam/bánh thuẫn.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Chú thích -->
+      <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+          Loại bánh truyền thống thường xuất hiện trong các dịp lễ Tết ở Quảng Nam. Bánh có hình bông hoa vàng ruộm, làm từ trứng gà, bột năng và đường, được nướng bằng khuôn gang trên than hồng. Bánh thuẫn không chỉ ngon mà còn mang ý nghĩa may mắn, sung túc, là món bánh gắn liền với ký ức Tết của nhiều thế hệ người miền Trung.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Đường kẻ phân chia -->
+<div class="divider"></div>
+<main class="container" id="NA">
+<div class="banner"> 
+  <div class="banner-content">
+      <h1 class="animate-title">NGHỆ AN</h1>
+      <p class="description">
+        Nghệ An là tỉnh lớn nhất Việt Nam về diện tích, thuộc vùng Bắc Trung Bộ, có vị trí chiến lược với địa hình đa dạng gồm núi, đồng bằng và bờ biển dài. Nghệ An là quê hương của Chủ tịch Hồ Chí Minh và nổi tiếng với truyền thống hiếu học, cần cù, yêu nước. Văn hóa xứ Nghệ đặc sắc với dân ca ví giặm, ẩm thực đậm đà và nhiều lễ hội truyền thống.
+      </p>
+      <img class="main-image" src="/static/images/ảnh nghệ an/banner nghệ an.png" alt="Đại Nội Huế">
+  </div>
+</div>
+</main>
+
+<div class="landmark-section" id="Danh lam thắng cảnh-4">
+  <h2 class="section-heading"><span class="highlight">KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH NGHỆ AN</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">1. VINH</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh nghệ an/vinh.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Thành phố Vinh – “trái tim xứ Nghệ” – là trung tâm kinh tế, văn hóa, chính trị sôi động bậc nhất Bắc Trung Bộ. 
+      Nơi đây nổi bật với các biểu tượng như Thành cổ Vinh, Quảng trường Hồ Chí Minh và núi Quyết - vùng đất tứ linh, từng được vua Quang Trung chọn làm kinh đô, nhưng việc xây thành đã phải gác lại sau khi vua băng hà. 
+      Không chỉ sôi động, Vinh còn là điểm khởi hành lý tưởng để khám phá biển Cửa Lò thơ mộng, làng Sen quê Bác đầy tự hào hay những vùng núi hoang sơ phía Tây. 
+      Sự hòa quyện giữa hiện đại và truyền thống khiến thành phố này mang một nét quyến rũ rất riêng của xứ Nghệ.
+    </p>
+  </div>
+  <div class="image-row">
+  <!-- Cầu Vàng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh nghệ an/núi quyết.png" alt="Cầu Vàng">
+      <p><strong>Núi Quyết </strong> - Nằm ở trung tâm thành phố Vinh, là nơi thờ vua Quang Trung và là điểm ngắm toàn cảnh thành phố đẹp nhất.</p>
+    </div>
+
+    <!-- Lễ hội Cầu Ngư -->
+    <div class="image-item">
+      <img src="/static/images/ảnh nghệ an/thành cổ vinh.png" alt="Lễ hội Cầu Ngư">
+      <p><strong>Thành cổ Vinh</strong> - Di tích lịch sử quan trọng từ thời vua Gia Long, được xây dựng vào đầu thế kỷ 19.  </p>
+    </div>
+
+    <!-- Cầu Rồng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh nghệ an/quảng trường vinh.png" alt="Cầu Rồng">
+      <p><strong>Quảng trường Hồ Chí Minh - </strong>  Biểu tượng tự hào của thành phố Vinh, nơi lưu giữ tượng đài Bác Hồ và là trung tâm các sự kiện chính trị, văn hóa quan trọng.  </p>
+    </div>
+  </div>
+
+  <div>
+  <h2 style="font-size: 24px; font-weight: bold;">2. KHU LƯU NIỆM CHỦ TỊCH HỒ CHÍ MINH</h2>
+  <!-- Ảnh lớn thành phố Vinh -->
+  <div class="image-row">
+    <!-- Cầu Vàng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh nghệ an/nhà hcm 1.png"></img>
+    </div>
+    <div class="image-item">
+      <img src="/static/images/ảnh nghệ an/nhà hcm 2.png"></img>
+    </div>
+  </div>
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px; line-height: 1.6;">
+      Khu lưu niệm Chủ tịch Hồ Chí Minh tại Kim Liên, Nam Đàn, Nghệ An là một di tích quốc gia đặc biệt, ghi dấu nơi sinh và thời niên thiếu của Bác Hồ. Khu di tích cách thành phố Vinh khoảng 15 km và bao gồm các địa điểm chính:<br>
+        - <strong>Làng Sen (quê nội)</strong>: Nơi Bác Hồ lớn lên, với ngôi nhà tranh đơn sơ và không gian làng quê truyền thống.<br>
+        - <strong>Làng Hoàng Trù (quê ngoại)</strong>: Nơi Bác sinh ra, gắn liền với tuổi thơ và gia đình của Người.<br>
+        - <strong>Khu mộ bà Hoàng Thị Loan</strong>: Mộ mẹ của Bác, tọa lạc trên núi Động Tranh, thể hiện lòng hiếu thảo và tri ân.<br>
+        - <strong>Nhà tưởng niệm và bảo tàng</strong>: Trưng bày nhiều hiện vật, hình ảnh về cuộc đời và sự nghiệp cách mạng của Chủ tịch Hồ Chí Minh.<br>
+        Khu di tích Kim Liên không chỉ là nơi tưởng niệm mà còn là điểm đến giáo dục truyền thống, thu hút đông đảo du khách trong và ngoài nước đến tham quan và tìm hiểu về cuộc đời của vị lãnh tụ kính yêu.
+    </p>
+  </div>
+
+  <div>
+  <h2 style="font-size: 24px; font-weight: bold;">3. VƯỜN QUỐC GIA PÙ MÁT - “vườn địa đàng” giữa lòng xứ Nghệ</h2>
+  <div class="info-section">
+    <div class="info-image">
+      <img src="/static/images/ảnh nghệ an/pù mát.png" alt="Welcome to Đà Nẵng">
+    </div>
+    <div class="info-text">
+      <p style="line-height: 1.5;"><i>Nổi tiếng như một “vườn địa đàng” ẩn mình giữa dãy Trường Sơn hùng vĩ, Vườn quốc gia Pù Mát tại Nghệ An chính là điểm đến lý tưởng cho những ai yêu thích khám phá thiên nhiên hoang sơ và trải nghiệm những hoạt động du lịch độc đáo. 
+
+        Không chỉ nổi bật bởi giá trị đa dạng sinh học, Pù Mát còn mê hoặc du khách với thác Khe Kèm hùng vĩ, sông Giăng thơ mộng và rừng săng lẻ cổ thụ trải dài tít tắp. Nơi đây còn là mái nhà của cộng đồng người Đan Lai độc đáo – góp phần tạo nên một bức tranh văn hóa – sinh thái đậm chất hoang sơ và đầy bí ẩn.</i></p>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Phần Lễ hội -->
+<div class="festival-section" style="margin-top: -80px;" id="Văn hoá - lễ hội-4">
+  <h2 class="section-heading"><span class="highlight">VĂN HÓA - LỄ HỘI</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Làng Sen – Về quê Bác</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh nghệ an/lễ hội làng sen.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Làng Sen được tổ chức hằng năm vào dịp 19/5 tại quê hương Bác Hồ – xã Kim Liên, huyện Nam Đàn, Nghệ An – nhằm tưởng niệm ngày sinh của Chủ tịch Hồ Chí Minh. Lễ hội gồm phần lễ trang trọng và phần hội sôi nổi với nhiều hoạt động như hát dân ca ví giặm, thi thể thao, biểu diễn nghệ thuật. Đây là dịp đặc biệt để nhân dân cả nước thể hiện lòng biết ơn và tự hào về vị lãnh tụ vĩ đại của dân tộc.
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội du lịch Cửa Lò</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh nghệ an/lễ hội cửa lò.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Du lịch biển Cửa Lò là sự kiện văn hóa tầm cỡ; là dịp để tôn vinh vẻ đẹp của thiên nhiên, văn hóa và con người xứ Nghệ. Lễ hội là cơ hội để giới thiệu đến du khách trong nước và quốc tế về biển Cửa Lò, về thành phố Vinh và tỉnh Nghệ An phát triển và giàu bản sắc văn hóa.
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Đền Cuông – Theo dấu An Dương Vương</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh nghệ an/lễ hội đền cuông.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Đền Cuông là một trong những lễ hội lớn và lâu đời nhất ở Nghệ An, diễn ra hằng năm từ ngày 12 đến 16 tháng 2 âm lịch tại xã Diễn An, huyện Diễn Châu. Lễ hội nhằm tưởng niệm Thục Phán An Dương Vương – vị vua lập nước Âu Lạc và xây thành Cổ Loa, đồng thời tôn vinh tướng quân Cao Lỗ, người chế tác nỏ thần giữ yên bờ cõi dân tộc.
+    </p>
+  </div>
+</div>
+<!-- PHẦN ẨM THỰC -->
+<div class="am-thuc-section" style="margin-top: -100px;" id="Ẩm thực-4">
+  <h2 class="section-heading"><span class="highlight">ẨM THỰC</span></h2>
+  <div class="am-thuc-content">
+    <!-- Bún bò Huế -->
+    <div class="bun-bo">
+      <img src="/static/images/ảnh nghệ an/cháo lươn.png" alt="Bún bò Huế">
+      <h3 class="food-title">Cháo lươn xứ Nghệ</h3>
+      <p class="food-description">
+        Cháo lươn thì không khó kiếm, nhưng tìm được một nơi làm cháo lươn ngon đậm đà và khác biệt như ở Nghệ An thì không hề dễ. Dần dần, món cháo lươn trở thành một nét độc đáo trong văn hóa ẩm thực Nghệ An. Rất nhiều người có kinh nghiệm du lịch Nghệ An đã chia sẻ lại rằng, nếu đã đến nơi này, bạn nhất định phải ăn thử món cháo lươn.
+      </p>
+    </div>
+
+ <!-- Cột bên phải: Mì Cao Lầu & Bánh Thuẫn -->
+  <div style="width: 100%; flex-direction: column; gap: 40px;">
+    <!-- Mì cao lầu -->
+    <div>
+      <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px; margin-top: -20px;">Bánh mướt</h3>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <!-- Hình ảnh -->
+        <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+          <img src="/static/images/ảnh nghệ an/bánh mướt.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <!-- Chú thích -->
+        <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+          <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.5;">
+            Bánh mướt là món ăn sáng quen thuộc của người dân xứ Nghệ, nhìn khá giống bánh cuốn miền Bắc và bánh ướt của miền Nam. Lúc cuốn, người làm sẽ khéo léo phết một lớp dầu nên thường không bị dính. Đĩa bánh mướt nóng hổi, dậy mùi thơm được ăn kèm chén nước mắm vắt chanh chua thanh khiến ai nếm thử cũng lưu luyến mãi không quên.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bánh thuẫn -->
+    <div>
+      <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px;">Cháo canh</h3>
+
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <!-- Hình ảnh -->
+        <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+          <img src="/static/images/ảnh nghệ an/cháo canh.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- Chú thích -->
+        <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+          <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.5;">
+            Gọi là cháo, nhưng thực chất không phải là cháo. Món cháo canh Nghệ An bao gồm sợi bánh canh dai mềm cùng nước dùng từ xương heo ngọt thanh. Nước dùng đạt chuẩn phải có độ sánh mịn như cháo. Bên trên bát cháo canh, người ta thêm chả, trứng cút, thịt heo lát hoặc thịt bằm, chả, tôm, chả giò. Tất cả hòa quyện tạo nên một bát cháo canh đậm đà, thơm ngon khó cưỡng.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Đường kẻ phân chia -->
+<div class="divider"></div>
+
+<main class="container" id="KH">
+<div class="banner"> 
+  <div class="banner-content">
+      <h1 class="animate-title">KHÁNH HÒA</h1>
+      <p class="description">
+        Khánh Hòa là tỉnh ven biển Nam Trung Bộ, nổi tiếng với vịnh Nha Trang và Cam Ranh. Nơi đây có bờ biển dài, khí hậu ôn hòa và giàu tài nguyên du lịch biển đảo. Văn hóa đa dạng với dấu ấn Chăm Pa, lễ hội Tháp Bà, cầu ngư và ẩm thực biển phong phú. Đặc sản nổi bật gồm yến sào, bún sứa và nem nướng Ninh Hòa.
+      </p>
+      <img class="main-image" src="/static/images/ảnh khánh hòa/banner khánh hòa.png" alt="Đại Nội Huế">
+  </div>
+</div>
+</main>
+
+
+<div class="landmark-section" style="margin-top: -80px;" id="Danh lam thắng cảnh-5">
+  <h2 class="section-heading"><span class="highlight">KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH KHÁNH HÒA</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">1. NHA TRANG</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh khánh hòa/nha trang.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Nha Trang là thành phố biển thuộc tỉnh Khánh Hòa, được mệnh danh là “hòn ngọc của biển Đông”. Nơi đây nổi tiếng với vịnh Nha Trang, một trong những vịnh đẹp nhất thế giới, cùng bãi biển dài, cát trắng và nước trong xanh. Thành phố còn có nhiều điểm du lịch hấp dẫn như Tháp Bà Ponagar, Viện Hải dương học, Hòn Mun, Hòn Tằm. Nha Trang cũng nổi bật với ẩm thực biển tươi ngon và lễ hội biển sôi động.
+    </p>
+  </div>
+  <div class="image-row">
+    <!-- Cầu Vàng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh khánh hòa/vinpearl nha trang.png" alt="Cầu Vàng">
+      <p><strong>Vinpearl Nha Trang </strong> là khu nghỉ dưỡng và vui chơi giải trí cao cấp tọa lạc trên đảo Hòn Tre. Nơi đây nổi bật với công viên giải trí VinWonders, khách sạn 5 sao, sân golf và cáp treo vượt biển dài nhất Việt Nam.</p>
+    </div>
+
+    <!-- Lễ hội Cầu Ngư -->
+    <div class="image-item">
+      <img src="/static/images/ảnh khánh hòa/tháp bà nha trang.png" alt="Lễ hội Cầu Ngư">
+      <p><strong>Tháp Bà Ponagar Nha Trang</strong> là quần thể kiến trúc Chăm Pa lớn nhất Việt Nam. Nơi này gồm 3 khu vực: Mandapa, khu đền tháp và bia ký. Đây là những tàn tích còn sót lại vô cùng quý giá của một nền tôn giáo lâu đời nhất trên thế giới. </p>
+    </div>
+
+    <!-- Cầu Rồng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh khánh hòa/đầm bấy.png" alt="Cầu Rồng">
+      <p><strong>Đầm Bấy</strong>  là địa điểm du lịch mới ở Nha Trang nên khung cảnh tại đây còn khá hoang sơ, vắng vẻ. Nơi đây khiến du khách "xiêu lòng" bởi cảnh biển xinh đẹp cùng dòng nước trong xanh lặng sóng, bờ cát trắng mịn dài thoai thoải. </p>
+    </div>
+  </div>
+
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">2. CAM RANH</h2>
+  
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh khánh hòa/vinh-cam-ranh-1-1407.jpg" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px; object-fit: cover;">
+  
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Cam Ranh là thành phố ven biển phía Nam tỉnh Khánh Hòa, nổi tiếng với vịnh Cam Ranh – một trong những vịnh biển sâu, kín gió và an toàn nhất thế giới. Nơi đây sở hữu nhiều bãi biển đẹp như Bãi Dài, đảo Bình Ba, đảo Bình Hưng với vẻ đẹp hoang sơ, nước trong xanh và cát trắng mịn. Cam Ranh còn là cửa ngõ du lịch quốc tế nhờ sân bay quốc tế Cam Ranh, kết nối trực tiếp đến nhiều điểm đến trong và ngoài nước.
+    </p>
+  </div>
+    <div class="image-row">
+      <!-- Cầu Vàng -->
+      <div class="image-item">
+        <img src="/static/images/ảnh khánh hòa/đảo bình hưng.png" alt="Cầu Vàng">
+        <p><strong>Đảo Bình Hưng </strong>  được người dân ví như một viên ngọc quý giữa vùng biển Cam Ranh. Nơi đây còn được biết đến là điểm đến lý tưởng dành cho bất cứ ai muốn khám phá và tận hưởng vẻ đẹp hoang sơ giữa biển và núi đồi.</p>
+      </div>
+  
+      <!-- Lễ hội Cầu Ngư -->
+      <div class="image-item">
+        <img src="/static/images/ảnh khánh hòa/chùa ốc.png" alt="Lễ hội Cầu Ngư">
+        <p><strong>Chùa Ốc (Chùa Từ Vân)</strong>  là một công trình kiến trúc độc đáo, có “Một không hai” tại Cam Ranh. Chùa Ốc nổi tiếng với kiến trúc đặc trưng được xây dựng từ san hô, vỏ sò, vỏ ốc biển... mang đến cho du khách cảm giác thân thiện và gần gũi với thiên nhiên. </p>
+      </div>
+  
+      <!-- Cầu Rồng -->
+      <div class="image-item">
+        <img src="/static/images/ảnh khánh hòa/bãi nồm.png" alt="Cầu Rồng">
+        <p>Tách biệt với thế giới bên ngoài, <strong>bãi Nồm</strong> được tạo hóa ban tặng cho vẻ đẹp như thiên đường. Chính vì du lịch chưa phát triển và cũng chưa có sự can thiệp nhiều của bàn tay con người nên ở đây vẫn giữ nguyên vẻ hoang sơ vốn có.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Phần Lễ hội -->
+<div class="festival-section" id="Văn hoá - lễ hội-5">
+  <h2 class="section-heading"><span class="highlight">VĂN HÓA - LỄ HỘI</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Cầu Ngư</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh khánh hòa/cầu ngư kh mới.jpg" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Cầu Ngư ở Khánh Hòa bắt nguồn từ tục thờ Ông Nam Hải. Ông Nam Hải là cách gọi trang nghiêm của người dân vùng biển miền Nam Trung Bộ dành cho cá voi – loài cá tượng trưng cho điềm lành với thân hình to lớn, thường cứu giúp ngư dân khi gặp nạn trên biển. Người dân xem cá voi là một trong những vị thần biển linh thiêng. Khi cá chết trôi dạt vào bờ, dân làng chài thường làm tang lễ long trọng và thờ ở Lăng Ông.
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Yến Sào Nha Trang - Khánh Hòa</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh khánh hòa/lễ hội yến sào mới.jpg" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Yến Sào được tổ chức vào ngày 10/5 Âm lịch hằng năm tại đảo Yến Nha Trang, hòn Nội, vịnh Nha Trang, Khánh Hòa. Đây là sự kiện văn hóa quen thuộc với mỗi người dân tại Nha Trang, góp phần tôn vinh ngành nghề truyền thống phá hang yến vô cùng đặc sắc. Ngoài ra, các hoạt động văn hóa nghệ thuật đan xen giữa nét truyền thống và hiện đại cũng góp phần làm đa dạng thêm bức tranh lễ hội Nha Trang. 
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;"> Lễ hội Tháp Bà Ponagar</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh khánh hòa/le-hoi-thap-ba-ponagar-thumb_1636861321.jpeg" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Tháp Bà Ponagar Nha Trang được tổ chức với quy mô lớn hàng năm, gắn liền với tục thờ Mẫu có từ lâu đời của dân tộc Việt Nam. Đây là lễ hội truyền thống nhằm tôn vinh, tưởng niệm mẹ Ponagar - người đã có công dạy người dân cách trồng lúa, chăn nuôi, dệt vải và đưa người Chăm Pa đến cuộc sống ấm no. 
+    </p>
+  </div>
+</div>
+<!-- PHẦN ẨM THỰC -->
+<div class="am-thuc-section" style="margin-top: -80px" id="Ẩm thực-5">
+  <h2 class="section-heading"><span class="highlight">ẨM THỰC</span></h2>
+  <div class="am-thuc-content">
+    <!-- Bún bò Huế -->
+    <div class="bun-bo" style="width:80%;">
+      <img src="/static/images/ảnh khánh hòa/nem nướng ninh hòa.png" alt="Bún bò Huế">
+      <h3 class="food-title">Nem nướng Ninh Hòa</h3>
+      <p class="food-description">
+        Nem nướng được coi là đặc sản trứ danh của vùng đất Khánh Hòa. Nem được làm từ thịt nạc giã nhuyễn, thêm gia vị và mỡ hành, nướng trên bếp than hồng. Bạn chỉ cần dùng bánh tráng mỏng, cuộn nem, thêm 1 chút rau sống như xà lách, rau thơm, chuối xanh… 
+      </p>
+    </div>
+
+   <!-- Cột bên phải: Mì Cao Lầu & Bánh Thuẫn -->
+  <div style="width: 100%; flex-direction: column; gap: 40px;">
+  <!-- Mì cao lầu -->
+  <div>
+    <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px; margin-top: -20px;">Bún sứa Nha Trang</h3>
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Hình ảnh -->
+      <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+        <img src="/static/images/ảnh khánh hòa/bún sứa nha trang.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Chú thích -->
+      <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+          Bún sứa Nha Trang là món đặc sản nổi tiếng với vị thanh mát, giòn ngon đặc trưng của sứa tươi. Nước dùng được nấu từ cá biển như cá liệt, cá thu, trong veo nhưng đậm đà. Bún thường ăn kèm chả cá, rau sống và chút mắm ớt cay nồng, tạo nên hương vị khó quên. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bánh thuẫn -->
+  <div>
+    <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px;">Gỏi cá mai Nha Trang</h3>
+
+    <div style="display: flex; gap: 20px; align-items: flex-start;">
+      <!-- Hình ảnh -->
+      <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+        <img src="/static/images/ảnh khánh hòa/gỏi cá mai.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- Chú thích -->
+      <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+        <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+          Gỏi cá mai Nha Trang là một trong những món ăn nổi tiếng, mang hương vị đặc trưng của xứ biển. Món gỏi được chế biến kỳ công từ thịt cá mai thơm ngon, không tanh, kết hợp cùng rau sống tươi ngon và nước mắm pha chế đậm đà, tạo nên một món ăn cực kì hấp dẫn.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Đường kẻ phân chia -->
+<div class="divider"></div>
+
+<main class="container" id="NT">
+<div class="banner"> 
+  <div class="banner-content">
+      <h1 class="animate-title">NINH THUẬN</h1>
+      <p class="description">
+        Ninh Thuận là một tỉnh ven biển gần cực nam vùng duyên hải Nam Trung Bộ, miền Trung của Việt Nam. Thủ phủ của tỉnh là thành phố Phan Rang – Tháp Chàm nằm cách Thành phố Hồ Chí Minh 340 km về phía Bắc. Là tỉnh có nhiều người Chăm sinh sống nhất tại Việt Nam và là nơi gìn giữ được nhiều di sản quý báu của nền văn hoá Chămpa lâu đời.
+      </p>
+      <img class="main-image" src="/static/images/ảnh ninh thuận/banner ninh thuận.png" alt="Đại Nội Huế">
+  </div>
+</div>
+</main>
+
+
+<div class="landmark-section" id="Danh lam thắng cảnh-6">
+  <h2 class="section-heading"><span class="highlight">KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH NINH THUẬN</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">1. Thành phố Phan Rang – Tháp Chàm</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh ninh thuận/phan rang.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Thành phố Phan Rang – Tháp Chàm là trung tâm tỉnh lỵ của Ninh Thuận, nổi tiếng với nền văn hóa Chăm đặc sắc và khí hậu nắng gió quanh năm. Nơi đây có nhiều di tích như Tháp Po Klong Garai, làng gốm Bàu Trúc, làng dệt Mỹ Nghiệp, cùng các bãi biển đẹp như Ninh Chữ. Thành phố còn nổi bật với đặc sản nho, táo, cừu và là điểm đến lý tưởng để khám phá thiên nhiên bán sa mạc độc đáo.
+    </p>
+  </div>
+  <div class="image-row">
+    <!-- Cầu Vàng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh ninh thuận/tháp po klong.png" alt="Cầu Vàng">
+      <p><strong>Tháp Po Klong Garai: </strong> Biểu tượng văn hóa Chăm nổi tiếng nhất Ninh Thuận, nằm ngay trung tâm của thành phố, thu hút du khách bởi vẻ đẹp hùng vĩ và sự linh thiêng.</p>
+    </div>
+
+    <!-- Lễ hội Cầu Ngư -->
+    <div class="image-item">
+      <img src="/static/images/ảnh ninh thuận/làng gốm bàu trúc.png" alt="Lễ hội Cầu Ngư">
+      <p><strong>Làng gốm Bàu Trúc:</strong> Làng gốm cổ nhất Đông Nam Á, nổi tiếng với kỹ thuật nặn gốm bằng tay không cần khuôn, là nơi lưu giữ những giá trị văn hóa truyền thống quý báu.</p>
+    </div>
+
+    <!-- Cầu Rồng -->
+    <div class="image-item">
+      <img src="/static/images/ảnh ninh thuận/image.png" alt="Cầu Rồng">
+      <p><strong>Đồi cát Nam Cương (cách không xa trung tâm):</strong> Cảnh quan như sa mạc, nơi sống của người Chăm du mục, mang đến cho du khách trải nghiệm tuyệt vời giữa thiên nhiên hoang sơ và huyền bí.
+
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">2. Vịnh Vĩnh Hy</h2>
+  
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh ninh thuận/vịnh vĩnh hy.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+  
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Vịnh Vĩnh Hy nằm ở phía Đông Bắc tỉnh Ninh Thuận, thuộc xã Vĩnh Hải, cách trung tâm Phan Rang khoảng 40km. Đây là một trong những vịnh đẹp nhất Việt Nam, nổi bật với làn nước trong xanh, núi rừng bao quanh và bãi đá kỳ thú. Vịnh nằm gần Vườn quốc gia Núi Chúa, sở hữu hệ sinh thái biển đa dạng, đặc biệt là rạn san hô phong phú. Du khách có thể tham gia các hoạt động như đi thuyền đáy kính, lặn ngắm san hô, tắm biển hay thưởng thức hải sản tươi sống. Vẻ đẹp hoang sơ và yên bình của Vĩnh Hy làm say lòng bao du khách yêu thiên nhiên.
+    </p>
+  </div>
+</div> 
+<!-- Phần Lễ hội -->
+<div class="festival-section" style="margin-top: -80px;" id="Văn hoá - lễ hội-6">
+  <h2 class="section-heading"><span class="highlight">VĂN HÓA - LỄ HỘI</span></h2>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Katê (Lễ hội lớn nhất của người Chăm)</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh ninh thuận/lễ hội kate.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Katê là lễ hội lớn nhất của người Chăm theo đạo Bàlamôn, diễn ra vào tháng 10 dương lịch hàng năm. Các nghi lễ chính bao gồm rước y trang, múa hát dân gian và dâng lễ vật tại các tháp Chăm như Po Klong Garai. Đây là dịp để cộng đồng tưởng nhớ các vị vua, thần linh và cầu mong mưa thuận gió hòa.​
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;">Lễ hội Ramưwan (Ramưwan của người Chăm Bani)</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh ninh thuận/lễ hội ramuwan.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Ramưwan, thường diễn ra vào tháng 3 âm lịch, là dịp quan trọng nhất trong năm của người Chăm Bàni. Lễ hội bao gồm các nghi thức như tảo mộ, cúng tổ tiên và lễ chay niệm, thể hiện lòng hiếu thảo và sự gắn kết cộng đồng.​
+    </p>
+  </div>
+  <div>
+    <h2 style="font-size: 24px; font-weight: bold;"> Lễ hội Cầu ngư</h2>
+    <!-- Ảnh lớn thành phố Vinh -->
+    <img src="/static/images/ảnh ninh thuận/cầu ngư ninh thuận.png" alt="Vinh" style="width: 100%; height: auto; margin-bottom: 12px;">
+    <!-- Đoạn mô tả -->
+    <p style="font-size: 16px; margin-bottom: 24px;">
+      Lễ hội Cầu ngư được tổ chức hàng năm vào mùa biển, nhằm tưởng nhớ thần Cá Ông và cầu mong một mùa đánh bắt thuận lợi. Các hoạt động chính bao gồm rước linh Ông, múa lân, hát bội và đua thuyền, thu hút đông đảo người dân và du khách tham gia.​
+    </p>
+  </div>
+</div>
+<!-- PHẦN ẨM THỰC -->
+<div class="am-thuc-section" style="margin-top: -80px;" id="Ẩm thực-6">
+  <h2 class="section-heading"><span class="highlight">ẨM THỰC</span></h2>
+  <div class="am-thuc-content">
+    <!-- Bún bò Huế -->
+    <div class="bun-bo" style="width: 80%;">
+      <img src="/static/images/ảnh ninh thuận/bánh canh chả cá.png" alt="Bún bò Huế">
+      <h3 class="food-title">Bánh canh chả cá</h3>
+      <p class="food-description" style="font-size: 16px;">
+        Món bánh canh với nước dùng trong, ngọt thanh và đậm đà, ăn kèm với những miếng chả cá dai, thơm ngon, là đặc sản nổi bật của Ninh Thuận. Nước dùng được hầm từ xương và gia vị đặc trưng, tạo nên một hương vị vừa thanh nhẹ vừa đậm đà, mang đến trải nghiệm khó quên. Món ăn này thường được thưởng thức khi còn nóng, là lựa chọn lý tưởng để khởi đầu một ngày mới đầy năng lượng.
+      </p>
+    </div>
+
+    <!-- Cột bên phải: Mì Cao Lầu & Bánh Thuẫn -->
+    <div style="width: 100%; flex-direction: column; gap: 40px;">
+      <!-- Mì cao lầu -->
+      <div>
+      <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px; margin-top: -20px;">Rượu nho</h3>
+      <div style="display: flex; gap: 20px; align-items: flex-start;">
+        <!-- Hình ảnh -->
+        <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+          <img src="/static/images/ảnh ninh thuận/rượu nho.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <!-- Chú thích -->
+        <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+          <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+            Rượu nho Ninh Thuận có vị chua nhẹ, dễ uống, trong khi mứt nho dẻo ngọt là món quà tuyệt vời từ vùng trồng nho Ba Mọi nổi tiếng. 
+          </p>
+        </div>
+      </div>
+      </div>
+      <!-- Bánh thuẫn -->
+      <div>
+        <h3 style="font-size: 28px; font-weight: bold; margin-bottom: 16px;">Bánh xèo hải sản Ninh Chữ</h3>
+        <div style="display: flex; gap: 20px; align-items: flex-start;">
+          <!-- Hình ảnh -->
+          <div style="flex: 1; max-width: 50%; border-radius: 12px; overflow: hidden;">
+            <img src="/static/images/ảnh ninh thuận/bánh xèo hải sản.png" alt="Mì cao lầu" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+
+          <!-- Chú thích -->
+          <div style="flex: 1; background-color: #99A676; color: #000; padding: 20px; border-radius: 12px;">
+            <p style="margin: 0; font-size: 16px; font-weight: 500; line-height: 1.6;">
+              Bánh xèo giòn rụm, nhân đầy tôm, mực tươi, ăn kèm rau sống và nước mắm chua ngọt, tạo nên sự kết hợp hoàn hảo của hương vị biển và đất liền.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="footer-top">
+    <img src="/static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+    <div class="footer-contact">
+      <p>Liên hệ: <a href="mailto:mandimnif@gmail.com">mandimnif@gmail.com</a></p>
+      <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+      <p>© 2025 M&M</p>
+    </div>
+  </div>
+</footer>
+  <script>
+    function navigateToSection(prefix, sectionId) {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  
+  <script>
+    function navigateToSection(baseId, selectedValue) {
+      const targetId = (selectedValue === baseId) ? baseId : selectedValue;
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/main.js"></script>
+
+</body>
+</html>

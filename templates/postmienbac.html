@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/postmienbac.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+    </div>
+    <nav>
+        <!--class="active" copy phần này dô cái tên của trang mình code (trong thẻ a sau phần "")-->
+      <div class="nav-center">
+        <a href="/" >Trang chủ</a>
+        <a class="active" href="/posts" >Bài viết</a>
+        <a href="/game">Game</a>
+        <a href="/forum">Diễn đàn</a>
+        <a href="/feedback">Góp ý</a>
+      </div>
+      <div class="nav-icons">
+        <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+        <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </nav>      
+  </header>
+<!--Write your code here-->
+
+<div id="toc">
+  <label for="HN"></label>
+  <select id="HN" onchange="navigateToSection('HN', this.value)">
+      <option value="Thông tin-1">HÀ NỘI</option>
+      <option value="Thông tin-1">Thông tin</option>
+      <option value="Danh lam thắng cảnh-1">Danh lam thắng cảnh</option>
+  </select>
+
+  <select id="QN" onchange="navigateToSection('QN', this.value)">
+      <option value="hông tin-2">QUẢNG NINH</option>
+      <option value="Thông tin-2">Thông tin</option>
+      <option value="Danh lam thắng cảnh-2">Danh lam thắng cảnh</option>
+      <option value="Ẩm thực-2">Ẩm thực</option>
+  </select>
+
+  <select id="BN" onchange="navigateToSection('BN', this.value)">
+      <option value="hông tin-3">BẮC NINH</option>
+      <option value="Thông tin-3">Thông tin</option>
+      <option value="Danh lam thắng cảnh-3">Danh lam thắng cảnh</option>
+      <option value="Văn hoá - lễ hội-3">Văn hoá - Lễ hội</option>
+      <option value="Ẩm thực-3">Ẩm thực</option>
+  </select>
+
+  <select id="LC" onchange="navigateToSection('LC', this.value)">
+      <option value="hông tin-4">LÀO CAI</option>
+      <option value="Thông tin-4">Thông tin</option>
+      <option value="Danh lam thắng cảnh-4">Danh lam thắng cảnh</option>
+      <option value="Văn hoá - lễ hội-4">Văn hoá - Lễ hội</option>
+      <option value="Ẩm thực-4">Ẩm thực</option>
+  </select>
+
+  <select id="HG" onchange="navigateToSection('HG', this.value)">
+      <option value="hông tin-5">HÀ GIANG</option>
+      <option value="Thông tin-5">Thông tin</option>
+      <option value="Danh lam thắng cảnh-5">Danh lam thắng cảnh</option>
+      <option value="Văn hoá - lễ hội-5">Văn hoá - Lễ hội</option>
+      <option value="Ẩm thực-5">Ẩm thực</option>
+  </select>
+</div>
+
+
+
+<div class="banner">
+<div class="slides">
+  <img src="/static/images/banner1.png" alt="Lăng Bác">
+  <img src="/static/images/banner2.png" alt="Hồ Gươm">
+  <img src="/static/images/banner3.png" alt="Chùa">
+  <img src="/static/images/banner4.png" alt="Nhà Thờ lớn">
+  <img src="/static/images/banner5.png" alt="Cầu thê Húc">
+  <img src="/static/images/banner6.png" alt="Cầu Long Biên">
+  <img src="/static/images/banner7.png" alt="Văn Miếu">
+  <img src="/static/images/banner8.png" alt="Xe lửa">
+  <img src="/static/images/banner1.png" alt="Lăng Bác">
+</div>
+</div>
+
+
+
+
+
+<div id="Thông tin-1" class="HN">
+  <h1>HÀ NỘI</h1>
+  <p class="description">
+    Hà Nội là trung tâm văn hoá, chính trị, thương mại và du lịch quan trọng của cả nước. Với lịch sử Hà Nội nghìn năm văn hiến, nơi đây đã và đang trở thành điểm đến nổi tiếng toàn cầu. Nơi đây có hệ thống di sản văn hóa vô cùng phong phú và đặc sắc được hình thành, bồi đắp qua hàng nghìn năm lịch sử. Hà Nội hiện dẫn đầu cả nước về số lượng di sản văn hóa vật thể và phi vật thể với hàng nghìn di tích, lễ hội, làng nghề, trong đó có nhiều di sản đã được UNESCO công nhận.
+  </p>
+  
+    <div class="places">
+    <div class="place"><img src="/static/images/Rectangle 4.png"><div class="place-name">Lăng Bác Hồ</div></div>
+    <div class="place"><img src="/static/images/Rectangle 5.png"><div class="place-name">Làng gốm Bát Tràng</div></div>
+    <div class="place"><img src="/static/images/Rectangle 6.png"><div class="place-name">Nhà thờ lớn</div></div>
+    <div class="place"><img src="/static/images/Rectangle 7.png"><div class="place-name">Hồ Gươm</div></div>
+    <div class="place"><img src="/static/images/Rectangle 8.png"><div class="place-name">Văn Miếu Quốc Tử Giám</div></div>
+    </div>
+
+    <div class="black-divider"></div>
+
+
+    <div id="Danh lam thắng cảnh-1" class="historical-section">
+      <div class="historical-item">
+        <img src="/static/images/HN-3.png" alt="Thành Cổ Loa">
+        <div class="historical-text">
+          <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+          <h2>THÀNH CỔ LOA</h2>
+          <p>Thành Cổ Loa còn có tên gọi khác là Loa Thành, là tòa thành cổ gắn liền với truyền thuyết An Dương Vương xây thành và chuyện Mỵ Châu – Trọng Thủy. Tòa thành này được xây dựng từ thế kỷ thứ III TCN, là kinh đô của nước Âu Lạc, nay thuộc địa phận của Thủ đô Hà Nội.</p>
+        </div>
+      </div>
+      <div class="historical-item">
+        <img src="/static/images/HN-1.png" alt="Hoàng Thành Thăng Long">
+        <div class="historical-text">
+          <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+          <h2>HOÀNG THÀNH THĂNG LONG</h2>
+          <p>Hoàng thành Thăng Long là quần thể di tích lịch sử – văn hóa đặc biệt của Việt Nam, nằm tại trung tâm thủ đô Hà Nội. Được xây dựng từ thời kỳ tiền Thăng Long, phát triển dưới các triều đại Lý, Trần, Lê và tồn tại qua nhiều thời kỳ lịch sử. Năm 2010, di tích này được UNESCO công nhận là Di sản văn hóa thế giới.</p>
+        </div>
+      </div>
+      <div class="historical-item">
+        <img src="/static/images/HN-2.png" alt="Hội Chùa Hương">
+        <div class="historical-text">
+          <div class="label green">LỄ HỘI</div>
+          <h2>HỘI CHÙA HƯƠNG</h2>
+          <p>Lễ hội chùa Hương diễn ra từ tháng Giêng, là hành trình hành hương xuôi theo suối Yến, ngắm cảnh đẹp và lên động Hương Tích – “Nam thiên đệ nhất động”. Lễ hội chùa Hương nổi bật với những nghi lễ dâng hương, tế lễ và các hoạt động văn hóa Phật giáo. Ngoài ra, còn có thể thưởng thức các món ăn truyền thống như bánh trôi chùa Hương và tham gia các hoạt động hấp dẫn như nghe hát ca trù, xem lễ khai sơn...</p>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+<div class="black-divider"></div>
+
+<div id="Thông tin-2" class="HN">
+  <h1>QUẢNG NINH</h1>
+  <p class="description">
+    Quảng Ninh nằm ở miền Bắc của Việt Nam, là tỉnh ven biển địa đầu vùng Đông Bắc Bộ. Lãnh thổ trải theo hướng đông bắc – tây nam. Quảng Ninh nằm cách thủ đô Hà Nội 125 km về phía Đông. Phía bắc giáp với Trung Quốc kết nối qua cửa khẩu quốc tế Móng Cái.</p>
+
+    <div id="Danh lam thắng cảnh-2" class="spotlight-locations">
+      <div class="location-item">
+        <img src="/static/images/image.png" alt=" ">
+        <p>Vịnh Hạ Long – Kỳ quan giữa trời mây nước Việt.</p>
+      </div>
+      <div class="location-item">
+        <img src="/static/images/image-2.png" alt=" ">
+        <p>Lễ hội Yên Tử - Di sản tâm linh và nét đẹp văn hóa Phật giáo Việt.</p>
+      </div>
+      <div class="location-item">
+        <img src="/static/images/image-3.png" alt=" ">
+        <p>Bảo tàng Quảng Ninh – Biểu tượng đen huyền giữa thành phố di sản.</p>
+      </div>
+    </div>
+    
+    <div id="Ẩm thực-2" class="section-title">
+      <span>ẨM THỰC</span>
+  </div>
+  <div class="food-content">
+      <div class="main-food-item">
+        <img src="/static/images/image-4.png" alt=" ">
+        <div class="main-food-description">
+          <h3>Chả mực Hạ Long </h3>
+          <p>Đặc sản trứ danh được làm từ mực mai tươi, giã tay thủ công. Miếng chả vàng ruộm, giòn thơm từng thớ, như gói cả biển khơi trong một miếng, dai ngọt bên trong, thơm nức mùi biển. Dù ăn với xôi, bánh cuốn hay cơm nóng, chả mực vẫn luôn để lại dư vị khó quên.</p>
+        </div>
+      </div>
+  
+      <!-- Divider between Main Item and Other Items -->
+      <div class="divider"></div>
+  
+      <div class="other-food-items">
+        <div class="food-item">
+          <img src="/static/images/image-5.png" alt=" ">
+          <div class="food-description">
+            <h3>Bánh gật gù Tiên Yên – cái tên lạ tai, nhưng mềm thơm </h3>
+            <h3>đến nao lòng.</h3>
+          </div>
+        </div>
+        <div class="black-divider"></div>
+        <div class="food-item">
+          <img src="/static/images/image-6.png" alt=" ">
+          <div class="food-description">
+            <h3>Sá sùng – Món quà của biển cả, tinh hoa ẩm thực độc đáo vùng</h3>
+            <h3>Vân Đồn, Quảng Ninh. Ai ăn rồi cũng nhớ mãi.</h3>
+          </div>
+        </div>
+        <div class="black-divider"></div>
+        <div class="food-item">
+          <img src="/static/images/image-7.png" alt=" ">
+          <div class="food-description">
+            <h3>Ngán – Hương vị độc đáo gắn liền với đời sống và văn hóa </h3>
+            <h3>ẩm thực Quảng Ninh.</h3>
+          </div>
+        </div>
+      </div>
+     </div>
+
+</div>
+
+<div class="black-divider"></div>
+
+
+<div id="Thông tin-3" class="HN">
+  <h1>BẮC NINH</h1>
+    <p class="description">
+      Bắc Ninh là vùng đất có bề dày lịch sử lâu dài, thuộc khu vực của cổ Giao Chỉ trong thời kỳ Hùng Vương. Qua các triều đại, Bắc Ninh là nơi trung tâm văn hóa và hành chính của vùng đồng bằng Bắc Bộ. Đặc biệt, nơi đây nổi tiếng với di tích Kinh Dương Vương – người sáng lập ra nhà nước Âu Lạc, và sự phát triển mạnh mẽ của văn hóa Quan Họ trong suốt nhiều thế kỷ. </p>
+      <img src="/static/images/image 22.png" alt=" " class="province-image">
+    <p class="description">
+      Bắc Ninh nằm ở phía Bắc của đồng bằng sông Hồng, giáp Hà Nội ở phía Tây, Hải Dương ở phía Nam, và Bắc Giang ở phía Đông. Sông Cầu là nguồn sống, chảy qua lòng Bắc Ninh, tạo nên hệ thống giao thông thủy lợi và văn hóa độc đáo. Mảnh đất này không chỉ nổi bật với những cánh đồng bạt ngàn mà còn với những làng nghề thủ công lâu đời. </p>
+  
+      <div id="Danh lam thắng cảnh-3" class="section-title">
+        <span>KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH BẮC NINH</span>
+      </div>
+
+      <div class="destination-grid">
+        <div class="destination-item">
+          <img src="/static/images/image 23.png" alt="Chùa Dâu">
+          <div class="destination-description">
+            <h3>Chùa Dâu</h3>
+            <p>Chùa Dâu – một trong những ngôi chùa cổ xưa nhất, nơi bắt nguồn của Phật giáo Việt Nam.</p>
+          </div>
+        </div>
+  
+        <div class="destination-item">
+          <img src="/static/images/image 24.png" alt="Đền Đô">
+          <div class="destination-description">
+            <h3>Đền Đô</h3>
+            <p>Đền Đô – đền thờ các vua nhà Lý, nơi vinh danh một triều đại vàng son.</p>
+          </div>
+        </div>
+  
+        <div class="destination-item">
+          <img src="/static/images/image 25.png" alt="Khu di tích Kinh Dương Vương">
+          <div class="destination-description">
+            <h3>Khu di tích Kinh Dương Vương</h3>
+            <p>Khu di tích Kinh Dương Vương – di tích văn hóa cổ xưa, nơi lưu giữ dấu tích lịch sử của vùng đất.</p>
+          </div>
+        </div>
+  
+        <div class="destination-item">
+          <img src="/static/images/image 26.png" alt="Làng Quan Họ">
+          <div class="destination-description">
+            <h3>Làng Quan Họ</h3>
+            <p>Làng Quan Họ – nơi còn giữ nguyên nét truyền thống hát Quan Họ, như một bảo tàng sống về văn hóa dân gian.</p>
+          </div>
+        </div>
+        </div>
+
+        <div id="Văn hoá - lễ hội-3" class="section-title">
+          <span>VĂN HOÁ - LỄ HỘI</span>
+        </div>
+        <div class="festival-section">
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội Quan Họ Bắc Ninh - Tết Nguyên Đán</h3>
+              <img src="/static/images/image 27.png" alt=" ">
+              <p>Bắc Ninh là cái nôi của dân ca Quan Họ, với những điệu hát đượm tình quê, da diết. Quan Họ không chỉ là di sản văn hóa phi vật thể được UNESCO công nhận mà còn là niềm tự hào của dân tộc, là món ăn tinh thần của người dân Bắc Ninh và toàn vùng đồng bằng Bắc Bộ. Ngoài Quan Họ, Bắc Ninh còn nổi tiếng với những lễ hội truyền thống đặc sắc, thể hiện sự gắn bó giữa con người và thiên nhiên, diễn ra tại các làng quê, là dịp để người dân hát giao duyên, thi tài, và cầu mong cho một năm mùa màng bội thu.</p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội chùa Dâu - Tháng 3 âm lịch</h3>
+              <img src="/static/images/image 28.png" alt=" ">
+              <p>Lễ hội chùa Dâu, niềm tự hào của người Bắc Ninh, là một trong những lễ hội lớn nhất vùng. Câu ca "Dù ai đi đâu về đâu - Hễ trông thấy tháp chùa Dâu thì về - Dù ai buôn bán trăm nghề - Tháng tư ngày Tám thì về hội Dâu" đã nói lên tất cả về tầm quan trọng của lễ hội này trong lòng người dân. Được tổ chức vào ngày sinh nhật của Phật tổ Thích Ca Mâu Ni, lễ hội chùa Dâu không chỉ là dịp để người dân từ khắp nơi tề tựu, hành hương, mà còn là cơ hội để tôn vinh những giá trị văn hóa truyền thống, vun đắp tinh thần đoàn kết cộng đồng. </p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Hội Đại Bái - Tháng 9 âm lịch</h3>
+              <img src="/static/images/image 30.png" alt=" ">
+              <p>Hội làng Đại Bái (còn gọi là lễ hội truyền thống làng nghề đúc đồng Đại Bái) là dịp để người dân tưởng nhớ ông tổ nghề đúc đồng – Nguyễn Công Truyền. Lễ hội thường được tổ chức vào tháng Giêng hàng năm, với nhiều nghi lễ trang trọng và hoạt động văn hóa dân gian đặc sắc như rước kiệu, tế lễ, biểu diễn rối nước, và đặc biệt là trưng bày các sản phẩm thủ công truyền thống mang đậm dấu ấn làng nghề.</p> 
+            </div>
+          </div>
+          </div>
+
+        <div id="Ẩm thực-3" class="section-title">
+          <span>ẨM THỰC</span>
+      </div>
+      <div class="food-content">
+          <div class="main-food-item">
+            <img src="/static/images/image-8.png" alt=" ">
+            <div class="main-food-description">
+              <h3>Bánh phu thê Đình Bảng</h3>
+              <p>Bánh phu thê Đình Bảng nổi tiếng có hương vị đặc trưng nhất, vị ngọt dịu, kết hợp giữa sự dẻo thơm của phần vỏ làm từ gạo nếp cái hoa vàng và phần nhân đậu xanh bùi ngậy. Bánh thường được gói bằng lá chuối để làm dậy mùi thơm hơn, món ngọt truyền thống mang ý nghĩa tình yêu thủy chung.</p>
+            </div>
+          </div>
+      
+          <!-- Divider between Main Item and Other Items -->
+          <div class="divider"></div>
+      
+          <div class="other-food-items">
+            <div class="food-item">
+              <img src="/static/images/image-9.png" alt=" ">
+              <div class="food-description">
+                <h3>Thịt gà luộc Bắc Ninh - Thịt gà thơm, nước chấm làm từ mắm tôm đặc trưng.</h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-10.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh đúc lạc - Bánh chấm tương  hoặc nước mắm chưng thịt bằm. Có nơi<h3>
+                <h3>còn rắc thêm hành phi, lạc rang thơm bùi. </h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-11.png" alt=" ">
+              <div class="food-description">
+                <h3>Nem làng Bùi - Nem được làm từ thịt lợn nạc trộn thính, cuốn cùng</h3>
+                <h3> lá sung ăn một lần là nhớ mãi.</h3>
+              </div>
+            </div>
+          </div>
+         </div>
+         </div>
+</div>
+
+<div class="black-divider"></div>
+
+<div id="Thông tin-4" class="HN">
+  <h1>LÀO CAI</h1>
+    <p class="description">
+      Lào Cai là một tỉnh miền núi thuộc vùng Tây Bắc của Việt Nam, nằm ở khu vực biên giới giáp với Trung Quốc. Nơi đây nổi tiếng với cảnh sắc thiên nhiên hùng vĩ, khí hậu mát mẻ quanh năm và là nơi sinh sống của nhiều dân tộc thiểu số như H’Mông, Dao, Tày, Giáy, Nùng… Mỗi dân tộc mang một nét văn hóa riêng, góp phần tạo nên bản sắc đặc biệt cho vùng đất này. </p>
+      <img src="/static/images/image 31.png" alt=" " class="province-image">
+    <p class="description">
+      Điểm đến nổi bật nhất của Lào Cai chính là thị xã Sa Pa, nơi có đỉnh Fansipan – nóc nhà Đông Dương, những thửa ruộng bậc thang trùng điệp, những bản làng mờ sương và các chợ phiên đầy sắc màu. Ngoài ra, Lào Cai còn thu hút du khách với những di tích lịch sử – văn hóa như đền Thượng, đền Mẫu, các lễ hội truyền thống và ẩm thực vùng cao phong phú. Không chỉ là điểm đến du lịch nổi bật, Lào Cai còn là nơi gìn giữ những giá trị văn hóa đặc trưng của miền núi phía Bắc, là nơi giao thoa giữa quá khứ và hiện đại, giữa con người và thiên nhiên.</p>
+      <div id="Danh lam thắng cảnh-4" class="section-title">
+        <span>KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH LÀO CAI</span>
+      </div>
+
+      <section class="province-section">
+        <h2>1. SA PA</h2>
+          <div class="festival-section">
+            <div class="festival-item">
+              <img src="/static/images/image 32.png" alt=" ">
+              <div class="festival-text">
+                <p>Sa Pa là một điểm du lịch cách trung tâm thành phố Lào Cai khoảng hơn 30 km. Nằm ở độ cao trung bình 1500 – 1800 m so với mặt nước biển, Thị Trấn Sapa luôn chìm trong làn mây bồng bềnh, tạo nên một bức tranh huyền ảo đẹp đến kỳ lạ. Nơi đây, có thứ tài nguyên vô giá đó là khí hậu quanh năm trong lành mát mẻ, với nhiệt độ trung bình 15-18°C. Khách du lịch đến đây không chỉ để tận hưởng không khí trong lành, sự yên bình giản dị của một vùng đất phía Tây Bắc, mà Sapa còn là điểm đến để bạn chiêm ngưỡng những vẻ đẹp hoang sơ của những ruộng bậc thang, thác nước, những ngọn vúi hùng vĩ, khám phá những phong tục tập quán, nét đẹp văn hóa của các dân tộc trên núi như : H’Mong đen, Dzao đỏ, Tày, Dzáy…
+                  </p>
+              </div>
+            </div>
+        <div class="destination-grid">
+          <div class="destination-item">
+            <img src="/static/images/image 33.png" alt="Fansipan">
+            <p class="destination-description">Fansipan – Nóc nhà Đông Dương giữa biển mây Tây Bắc.</p>
+          </div>
+          <div class="destination-item">
+            <img src="/static/images/image 34.png" alt="Hàm Rồng">
+            <p class="destination-description">Hàm Rồng - Vẻ đẹp hoang sơ, thơ mộng của miền sương phủ.</p>
+          </div>
+          <div class="destination-item">
+            <img src="/static/images/image 35.png" alt="Nhà thờ">
+            <p class="destination-description">Nhà thờ đá Sa Pa – Dấu ấn kiến trúc Pháp giữa phố núi mù sương.</p>
+          </div>
+          <div class="destination-item">
+            <img src="/static/images/image 39.png" alt="Hàm Rồng">
+            <p class="destination-description">Ruộng bậc thang Y Tý - Vẻ đẹp hoang sơ và hùng vĩ của núi rừng.</p>
+          </div>
+        </div>
+    
+        <h2>2. CHỢ PHIÊN BẮC HÀ</h2>
+          <div class="festival-section">
+            <div class="festival-item">
+              <p> Chợ phiên Bắc Hà nằm tại thị trấn Bắc Hà, tỉnh Lào Cai, chợ phiên cách thành phố Lào Cai 70km di chuyển, chợ Bắc Hà nằm ngay trung tâm thị trấn. Đây là nơi giao lưu, mua bán, trao đổi gặp gỡ của đồng bào miền núi, người dân tộc thiểu số. Tuần nào cũng vậy, vào Chủ nhật là từng đoàn người lại kéo nhau về thị trấn Bắc Hà họp chợ, đi chợ phiên đã trở thành một nét văn hóa đậm đà bản sắc không thể thiếu của dân tộc nơi đây...</p>
+              <img src="/static/images/image 36.png" alt=" ">
+              <div class="festival-text">
+                <p>Chợ phiên Bắc Hà từ lâu đã được biết đến là một trong những phiên chợ đặc sắc của mảnh đất Bắc Hà, Lào Cai với đầy đủ những nét văn hóa truyền thống và màu sắc cuộc sống của đồng bào các dân tộc Mông, Tày, Nùng, Dao, Phù Lá.. 
+      </p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+      
+            <div class="festival-item">
+              <img src="/static/images/image 38.png" alt=" ">
+              <div class="festival-text">
+                <p>Khu chợ thổ cẩm nơi bày bán các món đồ thổ cẩm do chính người dân tộc nơi đây thêu, thêu, dệt thủ công bằng chính đôi bàn tay khéo léo của họ. Đến đây du khách có thể chọn mua vài bộ váy áo, khăn, túi,… nhỏ xinh, màu sắc rực rỡ treo trong các gian hàng về làm quà cho gia đình và bạn bè.
+      </p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="festival-item">
+              <img src="/static/images/image 37.png" alt=" ">
+              <div class="festival-text">
+                <p>Đi quanh chợ phiên khu khách sẽ bắt gặp các quầy hàng trưng bày sản phẩm rượu ngô Bản Phố, chè tuyết san Bản Liền, tương ớt nổi tiếng Bắc Hà đây đều là các sản phẩm đạt chứng nhận ocpop 3 sao cấp tỉnh trong những năm gần đây và các loại rau củ nông sản khác của địa phương.. 
+      </p> 
+              </div>
+            </div>
+              </div>
+
+        <div id="Văn hoá - lễ hội-4" class="section-title">
+          <span>VĂN HOÁ - LỄ HỘI</span>
+        </div>
+        <div class="festival-section">
+          <div class="festival-item">
+            <div class="festival-text">
+              <img src="/static/images/image 47.png" alt=" ">
+              <p>Cư dân sinh sống ở tỉnh Lào Cai gồm nhiều dân tộc khác nhau. Mỗi dân tộc đều có những phong tục, tập quán, trang phục, kiểu kiến trúc khác nhau mang dấu ấn văn hóa riêng. Đặc điểm này đã tạo cho Lào Cai bức tranh văn hóa rất đa dạng và phong phú. Nét văn hóa đặc sắc của tỉnh là những phiên chợ vùng cao. Chợ không chỉ là nơi mua bán, trao đổi hàng hóa mà phiên chợ ở đây cũng là dịp giao lưu, hát múa, vui chơi. Chợ còn là nơi trai gái hò hẹn, gặp gỡ hay tìm hiểu bạn đời...</p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội Đền Thượng Lào Cai</h3>
+              <img src="/static/images/image 51.png" alt=" ">
+              <p>Lễ hội Đền Thượng là lễ hội được tổ chức thường niên hàng năm để tưởng nhớ, tỏ lòng biết ơn tới Quốc công Tiết chế Trần Hưng Đạo một vị tướng lừng danh của dân tộc đã có công trấn giữ vùng biên ải giữ yên bờ cõi. Thường được tổ chức vào rằm tháng giêng, từ 13 – 15 tháng giêng. Các hoạt động diễn ra trong lễ hội: dâng hương, rước kiệu. các trò chơi dân gian như kéo co, đẩy gậy, chọi gà, chơi cờ người…</p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội Đền Thượng Lào Cai</h3>
+              <img src="/static/images/image 52.png" alt=" ">
+              <p>Lễ hội Đền Thượng (còn gọi là Lễ hội làng Lão Nhai), tổ chức gắn với Đền Thượng (hay còn gọi là đền Lão Nhai), nằm trên đồi Hỏa Hiệu tại Lào Cai. Lễ hội nhằm tôn vinh và tưởng nhớ đến công đức của Quốc công Tiết chế Hưng Đạo Đại Vương Trần Quốc Tuấn. Thường được tổ chức vào ngày 13, 14, 15 tháng giêng. Lễ hội gồm hai phần: phần lễ với các nghi thức rước kiệu, dâng hương trang nghiêm; và phần hội với nhiều hoạt động sôi nổi như múa lân, hát dân ca, đấu vật, kéo co và các trò chơi dân gian. Đây là dịp để người dân và du khách thập phương cầu mong một năm mới bình an, mùa màng bội thu, đồng thời tôn vinh tinh thần yêu nước và truyền thống uống nước nhớ nguồn của dân tộc.</p> 
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Hội Gầu tào của người H’Mông</h3>
+              <img src="/static/images/image 53.png" alt=" ">
+              <p>Hội Gầu Tào là lễ hội truyền thống quan trọng của người H’Mông, thường được tổ chức vào dịp đầu năm mới (từ mùng 1 đến mùng 15 tháng Giêng âm lịch) tại các tỉnh vùng cao như Lào Cai, Hà Giang, Lai Châu. Ban đầu, lễ hội mang ý nghĩa tạ ơn trời đất, cầu con, cầu phúc, cầu may, nhưng về sau trở thành dịp lễ cộng đồng mang đậm bản sắc văn hóa dân tộc. Trong lễ hội, người H’Mông dựng một cây nêu cao gọi là "cây Gầu Tào", biểu tượng kết nối giữa con người và trời đất. Các hoạt động trong phần hội rất phong phú: hát giao duyên, múa khèn, ném pao, đánh quay, thi giã bánh dày… tạo nên không khí vui tươi, rộn ràng và đầy sắc màu núi rừng. Hội Gầu Tào không chỉ là nơi gửi gắm niềm tin tâm linh mà còn là dịp để các chàng trai, cô gái H’Mông gặp gỡ, giao lưu, kết duyên đầu xuân. </p> 
+            </div>
+          </div>
+          </div>
+ 
+
+        <div id="Ẩm thực-4" class="section-title">
+          <span>ẨM THỰC</span>
+      </div>
+      <div class="food-content">
+          <div class="main-food-item">
+            <img src="/static/images/image 54.png" alt=" ">
+            <div class="main-food-description">
+              <h3>Hương vị độc đáo của thịt trâu gác bếp - đặc sản Lào Cai</h3>
+              <p>Thịt trâu được tẩm ướp gia vị đặc trưng của núi rừng Tây Bắc như mắc khén, gừng, ớt, tỏi,... rồi hun khói trên bếp củi trong nhiều ngày. Cách thưởng thức đúng điệu là có thể nướng, hấp hoặc chiên đều ngon và thưởng thức cùng với thức uống có cồn.</p>
+            </div>
+          </div>
+      
+          <!-- Divider between Main Item and Other Items -->
+          <div class="divider"></div>
+      
+          <div class="other-food-items">
+            <div class="food-item">
+              <img src="/static/images/image 55.png" alt=" ">
+              <div class="food-description">
+                <h3>Gà đen Lào Cai - Món ăn bổ dưỡng mang đậm bản sắc người</h3>
+                <h3>Mông giữa núi rừng Tây Bắc</h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image 56.png" alt=" ">
+              <div class="food-description">
+                <h3>Thắng cố – Món ăn đậm vị núi rừng, không thể thiếu trong</h3>
+                <h3>phiên chợ vùng cao Lào Ca</h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image 57.png" alt=" ">
+              <div class="food-description">
+                <h3>Mèn mén – Tinh hoa từ hạt ngô giản dị, mộc mạc nhưng đậm đà</h3>
+                <h3>như chính đất và người Tây Bắc</h3>
+              </div>
+            </div>
+          </div>
+         </div>
+         </div>
+
+</div>
+<div class="black-divider"></div>
+
+
+<div id="Thông tin-5" class="HN">
+  <h1>HÀ GIANG</h1>
+    <p class="description">
+      Hà Giang là một tỉnh miền núi Đông Bắc cách Hà Nội khoảng hơn 320km, là tỉnh giáp biên giới tỉnh Vân Nam, Quảng Tây và là nơi cực bắc của Tổ Quốc. Là một địa phương có điều kiện địa hình khắc nghiệt, chủ yếu là núi đá cao với độ dốc lớn, sông suối bị chia cắt tạo nên phong cảnh núi non hùng vĩ với những cung đường uốn lượn tuyệt đẹp luôn làm phải lòng bất kỳ ai bước đến. </p>
+        <img src="/static/images/image 71.png" alt=" " class="province-image">
+    <p class="description">
+      Hà Giang nổi bật với những ngọn núi đá tai mèo hùng vĩ, những con đèo hiểm trở bậc nhất Việt Nam như Mã Pí Lèng, Cao nguyên đá Đồng Văn được UNESCO công nhận là Công viên địa chất toàn cầu, mang vẻ đẹp độc đáo và kỳ bí, hiếm có trên thế giới.</p>
+    <p class="description"> - Là một trong “tứ đại đỉnh đèo” của vùng núi phía Bắc Việt Nam, Mã Pí Lèng nằm trên con đường mang tên Hạnh Phúc nối liền với thành phố Hà Giang, Đồng Văn và thị trấn Mèo Vạc. Tuy hiểm trở nhưng đây là cung đường mơ ước của nhiều phượt thủ khi đến Hà Giang bởi cảnh đẹp tuyệt mỹ. Khi đến đây sẽ cảm nhận rõ sự chênh vênh giữa một bên là núi đá, một bên là vực thẳm, xung quanh thiên nhiên hùng vĩ đến choáng ngợp. Đứng trên đỉnh đèo, các chân đi sẽ vỡ òa cảm xúc trong cảnh quan hùng vĩ đến đáng kinh ngạc với những cung đường khúc khuỷu sánh vai trên các cung đèo. </p>
+    <p class="description"> - Cao nguyên đá Đồng Văn gây ấn tượng mạnh mẽ bởi vẻ đẹp hùng vĩ, hoang sơ của hàng ngàn núi đá tai mèo nhọn hoắt, trải dài bất tận như một mê cung khổng lồ. Không chỉ là cảnh quan độc đáo, vùng đất này còn lưu giữ dấu tích của quá trình kiến tạo địa chất hơn 400 triệu năm, với nhiều hang động, hóa thạch và vách đá cổ kỳ bí. </p>
+      
+    <div id="Danh lam thắng cảnh-5"s class="section-title">
+        <span>KHÁM PHÁ CÁC ĐỊA ĐIỂM DANH LAM THẮNG CẢNH HÀ GIANG</span>
+      </div>
+
+      <section class="province-section">
+        <h2>1. CỘT CỜ LŨNG CÚ</h2>
+          <div class="festival-section">
+            <div class="festival-item">
+              <img src="/static/images/image 73.png" alt=" ">
+              <div class="festival-text">
+                <p>Nằm ở xã Lũng Cú, huyện Đồng Văn, tỉnh Hà Giang, cách trung tâm thành phố Hà Giang 154km, cách huyện Lị Đông Văn khoảng 24km, cột cờ Lũng Cú nằm ở độ cao 1700m so với mực nước biển. Cột cờ Lũng Cú là nơi thiêng liêng đánh dấu điểm cực Bắc địa đầu của đất nước ta, nơi đây còn gọi là núi Rồng hay tên chữ là Long Sơn. Hàng triệu lượt người đến thăm cột cờ Lũng Cú mỗi năm là hàng triệu cung bậc, cảm xúc và sự cảm nhận khác nhau, nhưng không phải ai cũng tường tận cột cờ ấy được xây dựng bao giờ và nó có ý nghĩa chính trị đặc biệt như thế nào. Để lá cờ Tổ quốc bình yên và tung bay trên bầu trời Việt, những người lính quân hàm xanh ở Lũng Cú bất kể ngày đêm luôn vững tay súng tuần tra, canh gác bảo vệ cột cờ. Ngoài tuần tra canh gác vòng ngoài, vòng trong vùng biên ải, họ còn giữ vững an ninh dọc 150km đường biên giới, bảo đảm an toàn cho người dân nơi địa đầu Tổ quốc phát triển kinh tế - xã hội, xây dựng quê hương giàu đẹp.
+                  </p>
+                <p>Do ở độ cao và liên tục bay phần phật trong mọi điều kiện thời tiết nắng mưa, nên tuổi thọ của mỗi lá cờ chỉ được chừng 2 tuần là bạc màu, rách mép. Theo quy định, cứ 15 ngày, những người lính mang quân hàm xanh ở nơi đây lại hạ cờ, thay vào đó lá cờ mới. Những lá cờ Tổ quốc dù cũ, rách do gió nhưng đã trở thành kỷ vật thiêng liêng để dành tặng các đoàn khách tham quan du lịch mỗi lần đặt chân đến vùng đất địa đầu Tổ quốc này.</p>
+              </div>
+            </div>
+          </div>
+    
+        <h2>2. SÔNG NHO QUẾ</h2>
+          <div class="festival-section">
+            <div class="festival-item">
+              <img src="/static/images/image 78.png" alt=" ">
+              <div class="festival-text">
+              <p> Được ví như một thung lũng tuyệt đẹp ở châu Âu, Sông Nho Quế nằm ở mảnh đất Hà Giang có phong cảnh nguyên sơ, yên bình, Sông Nho Quế làm thổn thức bao người yêu thiên nhiên. Không giống với những con sông thông thường, Sông Nho Quế mang một vẻ đẹp nên thơ như sợi chỉ màu lung linh, ẩn hiện giữa núi rừng Đông Bắc hoang vu. Dòng sông này được bắt nguồn từ vùng núi Nghiêm Sơn - Vân Nam (Trung Quốc), chảy theo hướng Tây Bắc - Đông Nam, vào Việt Nam từ địa phận thôn Séo Lửng, xã Lũng Cú, huyện Đồng Văn, đi qua hẻm núi Tu Sản rồi chảy dọc theo đèo Mã Pí Lèng.</p>
+              <img src="/static/images/image 80.png" alt=" ">
+              <p>Truyền thuyết về dòng sông Nho Quế. Sông Nho Quế không chỉ níu giữ du khách bởi vẻ đẹp tựa chốn thần tiên mà câu chuyện đằng sau nó cũng đáng để bạn ngồi hàng giờ và lắng nghe. Truyền thuyết kể rằng cách đây rất lâu, đã có một cuộc chiến long trời lở đất giữa thần Sông và thần Núi. Thần Núi không chịu để nước chảy từ bên này sang bên kia, dẫn đến sự tức giận của thần Sông. Thần Sông sau đó đã sử dụng thanh kiếm sét của mình để chia thần Núi thành hai. Kết quả là, sườn núi khô biến thành một dòng sông chảy trơn tru và đây cũng là khởi đầu của dòng sông Nho Quế. Trải qua thời gian, dòng sông huyền thoại này vẫn hiện diện ở đó, chảy qua những dãy núi hùng vĩ và thể hiện vẻ đẹp hoang sơ, mê hoặc với màu xanh ngọc lục bảo của dòng nước. Có thể nói sông Nho Quế đại diện cho vẻ đẹp Hà Giang, một vẻ đẹp hoang sơ và thuần khiết.</p>
+            </div>
+          </div>
+          </div>
+
+          <h2>3. CỔNG TRỜI QUẢN BẠ</h2>
+          <div class="festival-section">
+            <div class="festival-item">
+              <img src="/static/images/image 82.png" alt=" ">
+              <div class="festival-text">
+              <p> Cổng trời Quản Bạ tọa lạc ngay giữa hai đỉnh núi đôi, có vị trí cao khoảng 1500m so với mực nước biển, xuyên qua những tầng mây để có thể ngắm nhìn trọn vẹn vẻ đẹp của vùng đất Đông Bắc. Nếu muốn ngắm nhìn được toàn cảnh Hà Giang thì hẳn chẳng có nơi nào lý tưởng hơn cổng trời Quản Bạ.</p>
+              <img src="/static/images/image 83.png" alt=" ">
+              <p>“Ai về thăm quê hương tôi, nơi biên cương là đây, có đường đi trên mây lên đến cổng trời...” Đó là câu hát mà bao người thuộc khi nhớ đến Hà Giang, nơi địa đầu Tổ quốc có một địa danh mang tên cổng trời Quản Bạ. Cổng trời Quản Bạ cách trung tâm thị xã Hà Giang khoảng 46km về phía Bắc, cũng là cửa ngõ đầu tiên để du khách khám phá công viên địa chất cao nguyên đá Đồng Văn.</p>
+            </div>
+          </div>
+          </div>
+
+        <div id="Văn hoá - lễ hội-5" class="section-title">
+          <span>VĂN HOÁ - LỄ HỘI</span>
+        </div>
+        <div class="festival-section">
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3> Lễ hội Lồng Tồng (Người Tày)</h3>
+              <img src="/static/images/image-12.png" alt=" ">
+              <p>Lễ hội Lồng Tồng của người Tày diễn ra vào đầu tháng Giêng Âm lịch, nhằm cầu mong mưa thuận gió hòa, mùa màng bội thu và cuộc sống ấm no. Các hoạt động trong lễ hội bao gồm tung còn, kéo co, đẩy gậy và thi cày ruộng, thể hiện tinh thần đoàn kết, gắn kết cộng đồng. Đây là dịp để người dân thể hiện bản sắc văn hóa đặc sắc của dân tộc mình.
+                Lễ hội Lồng tồng có hai phần gồm phần lễ và phần hội. Phần nghi lễ chủ yếu là cúng tế trời đất và thần linh.</p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội chợ tình Khâu Vai</h3>
+              <img src="/static/images/image-13.png" alt=" ">
+              <p>Lễ hội chợ tình Khâu Vai, tổ chức vào ngày 27 tháng 3 Âm lịch tại xã Khâu Vai, huyện Mèo Vạc, là dịp để những đôi lứa yêu nhau nhưng không thể thành đôi gặp lại và chia sẻ tâm tư. Lễ hội mang đậm nét văn hóa của các dân tộc Mông, Nùng, Giấy với những trò chơi dân gian, âm nhạc và trang phục truyền thống, tạo không khí giao lưu văn hóa, tình yêu và sự gắn kết. chủ lễ là già làng trong xã cùng đại diện chính quyền sẽ dâng hương để xin phép được tổ chức lễ hội. Đồng thời dâng lễ lên miếu ông, miếu bà nhằm thể hiện đạo lý uống nước nhớ nguồn, đời đời nhớ ơn công lao của những người đã có công khai thác mảnh đất Khâu Vai. Thông qua đó cũng tôn vinh sự thủy chung, trong sáng của tình yêu đôi lứa dù gặp nhiều trắc trở, không thể đến được với nhau nhưng vẫn tình cảm vẫn vẹn nguyên. Đó quả thật là một tình cảm rất đẹp, không làm trái với đạo lý, văn hóa xã hội.
+              </p>
+            </div>
+          </div>
+          <div class="festival-item">
+            <div class="festival-text">
+              <h3>Lễ hội Nhảy Lửa (Người Pà Thẻn)</h3>
+              <img src="/static/images/image-14.png" alt=" ">
+              <p>Lễ hội Nhảy Lửa của người Pà Thẻn diễn ra vào ngày 16 tháng 10 Âm lịch, tại xã Tân Bắc, huyện Quang Bình. Mục đích của lễ hội là xua đuổi tà ma, bệnh tật và cầu mong một năm mới bình an, bội thu. Các hoạt động trong lễ hội bao gồm nhảy qua đống lửa, múa hát và các nghi lễ cúng bái thần linh, mang đến không khí linh thiêng và mạnh mẽ. Trong tiếng khèn, tiếng trống vang rền giữa núi rừng, những người đàn ông được thầy mo “gọi hồn”, dẫn dắt vào trạng thái xuất thần. Họ chân trần nhảy múa trên đống than hồng rực lửa, tay vung lên không trung, miệng hú vang đầy mê hoặc, mà không hề tỏ ra đau đớn hay sợ hãi. Màn nhảy lửa không chỉ thể hiện niềm tin tâm linh sâu sắc, mà còn là biểu tượng cho sức mạnh, lòng can đảm và sự kết nối thiêng liêng giữa con người với tự nhiên. Đây là trải nghiệm văn hóa đặc biệt khiến bất kỳ ai chứng kiến cũng phải trầm trồ thán phục.</p> 
+            </div>
+          </div>
+
+          </div>
+ 
+
+        <div id="Ẩm thực-5" class="section-title">
+          <span>ẨM THỰC</span>
+      </div>
+      <div class="food-content">
+          <div class="main-food-item">
+            <img src="/static/images/image-15.png" alt=" ">
+            <div class="main-food-description">
+              <h3>Dẻo Thơm Vị Núi – Bánh Tam Giác Mạch Hà Giang Gói Trọn Hồn Cao Nguyên</h3>
+              <p>Bánh tam giác mạch mềm mềm, xôm xốp, vị ngọt thanh, càng nhai càng bùi, phảng phất hương thơm riêng của cây rừng. Những chiếc bánh tam giác mạch được xếp từng chồng, tất cả đều chung một màu tim tím rất ấn tượng và hấp dẫn với những du khách phương xa. </p>
+            </div>
+          </div>
+      
+          <!-- Divider between Main Item and Other Items -->
+          <div class="divider"></div>
+      
+          <div class="other-food-items">
+            <div class="food-item">
+              <img src="/static/images/image-16.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh Cuốn Nóng Phố Cổ Đồng Văn – Hương Sáng Cao Nguyên Dẻo Mềm</h3>
+                <h3>Trong Làn Sương Núi</h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-17.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh Chưng Gù – Đậm Vị Truyền Thống Trong Chiếc Bánh Nhỏ Mang Hình</h3>
+                <h3>Dáng Độc Đáo</h3>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-18.png" alt=" ">
+              <div class="food-description">
+                <h3>Phở chua Hà Giang - Phở có vị chua nhẹ, thanh mát, ăn kèm thịt lợn quay</h3>
+                <h3>rau sống và nước sốt đặc biệt. Khá lạ miệng so với phở miền xuôi.</h3>
+              </div>
+            </div>
+          </div>
+         </div>
+
+        </div>
+</div>
+      
+
+
+  <footer>
+    <div class="footer-top">
+      <img src="/static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+      <div class="footer-contact">
+        <p>Liên hệ: <a href="mailto:mandimnif@gmail.com">mandimnif@gmail.com</a></p>
+        <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+        <p>© 2025 M&M</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    
+    const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+let currentIndex = 0; // Chỉ số của ảnh hiện tại
+
+// Hàm để di chuyển đến ảnh tiếp theo
+function slideBanner() {
+  // Ẩn ảnh hiện tại
+  images[currentIndex].classList.remove('active');
+
+  // Tính toán vị trí của ảnh tiếp theo
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0; // Quay lại ảnh đầu tiên khi đến cuối
+  }
+
+  // Hiển thị ảnh tiếp theo
+  images[currentIndex].classList.add('active');
+}
+
+// Thiết lập để chuyển ảnh sau mỗi 3 giây
+setInterval(slideBanner, 2000); // 3 giây
+
+// Hiển thị ảnh đầu tiên khi tải trang
+images[currentIndex].classList.add('active');
+</script>
+<script>
+  // Hàm để di chuyển đến phần nội dung khi chọn mục lục
+  function navigateToSection(selectId) {
+    var selectedChapter = document.getElementById(selectId).value;  // Lấy giá trị từ select
+    if (selectedChapter) {
+      var targetElement = document.getElementById(selectedChapter);  // Tìm phần tử với id tương ứng
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });  // Cuộn trang tới phần tử
+      }
+    }
+  }
+</script>
+<script>
+  window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+</script>
+
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>

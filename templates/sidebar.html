@@ -1,0 +1,30 @@
+<!-- templates/sidebar.html -->
+<aside class="sidebar">
+    <ul class="menu">
+      <li class="{% if active_item=='home' %}active{% endif %}" data-item="home">
+        <i class="bi bi-house-door"></i> Trang chủ
+      </li>
+      <li class="{% if active_item=='tags' %}active{% endif %}" data-item="tags">
+        <i class="bi bi-tags"></i> Tags
+      </li>
+    </ul>
+  
+    {% if is_logged_in %}
+  <h4 class="menu-title">Cá Nhân</h4>
+  <ul class="menu">
+    <li class="{% if active_item=='your_posts' %}active{% endif %}" data-item="your_posts">
+      <i class="bi bi-question-circle"></i> Bài viết của bạn
+    </li>
+    <li class="{% if active_item=='your_answers' %}active{% endif %}" data-item="your_answers">
+      <i class="bi bi-chat-dots"></i> Câu trả lời của bạn
+    </li>
+    <li class="{% if active_item=='your_shares' %}active{% endif %}" data-item="your_shares">
+      <i class="bi bi-share-fill"></i> Bài đã chia sẻ
+    </li>
+    <li data-action="logout">
+      <i class="bi bi-power"></i> Đăng xuất
+    </li>
+  </ul>
+{% endif %}
+</aside>
+  

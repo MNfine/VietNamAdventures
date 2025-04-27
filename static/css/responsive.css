@@ -1,0 +1,96 @@
+/* Responsive cho điện thoại */
+/* Cho các trang giao diện ít tính năng*/
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none; }
+
+  /* Main content full-width */
+  .App, main#body-content {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+
+  /* Header nav cuộn ngang */
+  .nav-center {
+    overflow-x: auto;
+    gap: 12px;
+  }
+  .nav-center a { flex: 0 0 auto; }
+
+  /* Intro & who section xếp dọc */
+  .intro, .who { flex-direction: column; gap: 20px; }
+  .who { align-items: center; }
+
+  /* Feature cards grid thành 1 cột */
+  .features { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+  /* Images giảm kích thước */
+  .images img { width: 140px; margin-bottom: 20px; }
+
+  /* Footer xếp dọc */
+  .footer-top { flex-direction: column; align-items: center; gap: 10px; }
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none !important; }
+
+  /* Header: wrap và xếp hợp lý */
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 10px;
+    height: auto;
+  }
+  .logo {
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+  .logo img { height: 40px; }
+
+  /* Nav center cuộn ngang, loại bỏ margin-left */
+  nav {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 5px 0;
+  }
+  .nav-center {
+    display: flex;
+    gap: 12px;
+    flex: 1 0 auto;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .nav-center a {
+    flex: 0 0 auto;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  /* Icon xếp cùng hàng cuối */
+  .nav-icons {
+    flex: 0 0 auto;
+    margin-left: 10px;
+  }
+
+  /* Giảm font-size cho nav */
+  .nav-center a { font-size: 14px; }
+
+  /* Intro & who sections full-width */
+  .intro { max-width: 100% !important; margin: 20px auto; padding: 0 10px; }
+  .who { flex-direction: column !important; align-items: center !important; gap: 20px !important; }
+
+  /* Feature cards thành 1 cột, full-width */
+  .features { max-width: 100% !important; margin: 20px auto !important; grid-template-columns: 1fr !important; gap: 20px !important; padding: 0 10px !important; }
+
+  /* Image section full-width, ảnh nhỏ lại */
+  .images { max-width: 100% !important; margin: 20px auto !important; padding: 0 10px !important; justify-content: center; }
+  .images img { width: 140px !important; margin-bottom: 20px; }
+
+  /* Footer xếp cột */
+  .footer-top { flex-direction: column !important; align-items: center !important; padding: 20px 10px !important; }
+}

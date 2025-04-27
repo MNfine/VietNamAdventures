@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Bài Viết</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+  <link rel="stylesheet" href="/static/css/new_post.css">
+  <link rel="stylesheet" href="/static/css/sidebar.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <div class="App">
+    <header class="header">
+      <div class="logo">
+        <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+      </div>
+      <nav>
+        <div class="nav-center">
+          <a href="/">Trang chủ</a>
+          <a href="/posts">Bài viết</a>
+          <a href="/game">Game</a>
+          <a href="/forum" class="active">Diễn đàn</a>
+          <a href="/feedback">Góp ý</a>
+        </div>
+        <div class="nav-icons">
+          <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+          <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+        </div>
+      </nav>      
+    </header>
+
+    {% include 'sidebar.html' %}
+
+    <main id="body-content">
+      <div class="forum-container">
+        <div class="new-post-title-wrapper">
+          <h2>Bài viết mới</h2>
+        </div>
+        <div class="new-post-wrapper">
+          <form class="new-post-form" id="newPostForm">
+            <label>
+              Tiêu đề:
+              <input type="text" name="title" placeholder="Tiêu đề" required>
+            </label>
+            <label>
+              Nội dung bài viết:
+              <textarea name="content" placeholder="Nội dung bài viết" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="button" class="add-image-btn">Thêm ảnh</button>
+              <div class="action-buttons">
+                <button type="button" class="save-draft-btn">Lưu bản nháp</button>
+                <button type="submit" class="publish-btn">Xác nhận</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <img src="static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+        <div class="footer-contact">
+          <p>Liên hệ: <a href="mailto:mandimninf@gmail.com">mandimnif@gmail.com</a></p>
+          <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+          <p>© 2025 M&amp;M</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/sidebar.js"></script>
+  <script src="/static/js/new_post.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

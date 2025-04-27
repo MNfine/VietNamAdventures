@@ -1,0 +1,227 @@
+
+
+/* login.css - giao diện đăng nhập sát mẫu ảnh */
+/* overlay loader chung */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#loader .spinner {
+  width: 48px; height: 48px;
+  border: 5px solid #ddd;
+  border-top-color: #e63946;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Ẩn nội dung cho đến khi loader tắt */
+#body-content { display: none; }
+
+body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fffdf6;
+    color: #2c2c2c;
+  }
+  
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    width: 550px;
+    padding: 60px;
+    border-radius: 16px; 
+    background: #fff;
+  }
+  
+  .login-form h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #7a4327;
+    margin-bottom: 8px;
+  }
+  
+  .register-link {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #6f8751;
+  }
+  
+  .register-link a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin: 16px 0 15px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #9b573b;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fffdf8;
+  }
+  
+  .remember {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  button[type="submit"] {
+    margin-top: 24px;
+    float: right;
+    padding: 10px 22px;
+    font-weight: 600;
+    background-color: #b6cd80;
+    color: #2c2c2c;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #9eb56c;
+  }
+
+  .forgot {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .back-link {
+    display: inline-block;
+    color: #2c2c2c;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .back-link i {
+    vertical-align: middle;
+    margin-right: 6px;
+    color: #222;
+  }
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none; }
+
+  /* Main content full-width */
+  .App, main#body-content {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+
+  /* Header nav cuộn ngang */
+  .nav-center {
+    overflow-x: auto;
+    gap: 12px;
+  }
+  .nav-center a { flex: 0 0 auto; }
+
+  /* Intro & who section xếp dọc */
+  .intro, .who { flex-direction: column; gap: 20px; }
+  .who { align-items: center; }
+
+  /* Feature cards grid thành 1 cột */
+  .features { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+  /* Images giảm kích thước */
+  .images img { width: 140px; margin-bottom: 20px; }
+
+  /* Footer xếp dọc */
+  .footer-top { flex-direction: column; align-items: center; gap: 10px; }
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none !important; }
+
+  /* Header: wrap và xếp hợp lý */
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 10px;
+    height: auto;
+  }
+  .logo {
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+  .logo img { height: 40px; }
+
+  /* Nav center cuộn ngang, loại bỏ margin-left */
+  nav {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 5px 0;
+  }
+  .nav-center {
+    display: flex;
+    gap: 12px;
+    flex: 1 0 auto;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .nav-center a {
+    flex: 0 0 auto;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  /* Icon xếp cùng hàng cuối */
+  .nav-icons {
+    flex: 0 0 auto;
+    margin-left: 10px;
+  }
+
+  /* Giảm font-size cho nav */
+  .nav-center a { font-size: 14px; }
+
+  /* Intro & who sections full-width */
+  .intro { max-width: 100% !important; margin: 20px auto; padding: 0 10px; }
+  .who { flex-direction: column !important; align-items: center !important; gap: 20px !important; }
+
+  /* Feature cards thành 1 cột, full-width */
+  .features { max-width: 100% !important; margin: 20px auto !important; grid-template-columns: 1fr !important; gap: 20px !important; padding: 0 10px !important; }
+
+  /* Image section full-width, ảnh nhỏ lại */
+  .images { max-width: 100% !important; margin: 20px auto !important; padding: 0 10px !important; justify-content: center; }
+  .images img { width: 140px !important; margin-bottom: 20px; }
+
+  /* Footer xếp cột */
+  .footer-top { flex-direction: column !important; align-items: center !important; padding: 20px 10px !important; }
+}

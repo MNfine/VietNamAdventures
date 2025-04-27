@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hồ sơ của {{ user.username }} – Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/profile.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Nội dung chính -->
+  <main class="profile-page">
+    <div class="profile-card">
+      <a class="back-link"><i class="bi bi-arrow-left-circle-fill"></i> Trở lại</a>
+      <h2>Chào bạn, {{ user.username }}!</h2>
+      <p class="profile-field"><strong><i class="bi bi-envelope"></i> Email:</strong> {{ user.email or 'Chưa cập nhật' }}</p>
+      <p class="profile-field"><strong><i class="bi bi-telephone"></i> Số điện thoại:</strong> {{ user.phone or 'Chưa cập nhật' }}</p>
+      <a href="{{ url_for('logout') }}" class="btn-logout"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>
+    </div>
+  </main>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

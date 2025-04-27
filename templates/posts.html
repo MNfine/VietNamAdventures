@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/posts.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+    </div>
+    <nav>
+        <!--class="active" copy phần này dô cái tên của trang mình code (trong thẻ a sau phần "")-->
+      <div class="nav-center">
+        <a href="/" >Trang chủ</a>
+        <a href="/posts" class="active">Bài viết</a>
+        <a href="/game">Game</a>
+        <a href="/forum">Diễn đàn</a>
+        <a href="/feedback">Góp ý</a>
+      </div>
+      <div class="nav-icons">
+        <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+        <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </nav>      
+  </header>
+  <!--Write your code here-->
+  
+  <div class="container">
+    <!-- Bên trái -->
+    <div class="left-side">
+      <div class="card" onclick="focusRegion('north')">
+        <img src="/static/images/miền bắc.jpg" alt="Miền Bắc">
+        <div class="card-content">
+          <h3>Miền Bắc</h3>
+          <p>Đỉnh Fansipan nằm ở Lào Cai, cao 3.147m và được mệnh danh là “nóc nhà Đông Dương”. Đây là điểm đến hấp dẫn với cảnh quan hùng vĩ, thu hút du khách ưa thích chinh phục thiên nhiên và khám phá núi rừng Tây Bắc.</p>
+          <a href="/postmienbac" class="view-detail">Xem chi tiết</a>
+        </div>
+      </div>
+      <div class="card" onclick="focusRegion('central')">
+        <img src="/static/images/miền trung.jpg" alt="Miền Trung">
+        <div class="card-content">
+          <h3>Miền Trung</h3>
+          <p>Chùa Cầu nằm ở phố cổ Hội An, là công trình kiến trúc độc đáo có từ thế kỷ 17, do thương nhân Nhật Bản xây dựng. Mang đậm nét giao thoa văn hóa Việt – Nhật – Trung, và là biểu tượng của phố cổ Hội An.</p>
+          <a href="/postmientrung" class="view-detail">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bản đồ -->
+    <div class="map-container">
+      <img src="/static/images/Việt Nam map.svg" class="map">
+    </div>
+  
+    <!-- Bên phải -->
+    <div class="right-side" style="margin-top: 200px;">
+      <div class="card" onclick="focusRegion('south')">
+        <img src="/static/images/miền nam.jpg" alt="Miền Nam">
+        <div class="card-content">
+          <h3>Miền Nam</h3>
+          <p>Dinh Độc Lập nằm tại số 135 Nam Kỳ Khởi Nghĩa, Quận 1, TP.HCM, là di tích quốc gia đặc biệt. Nơi đây ghi dấu nhiều sự kiện lịch sử quan trọng, đặc biệt là ngày Giải phóng miền Nam 30/4/1975.</p>
+          <a href="/postmiennam" class="view-detail">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <img src="/static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+      <div class="footer-contact">
+        <p>Liên hệ: <a href="mailto:mandimnif@gmail.com">mandimnif@gmail.com</a></p>
+        <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+        <p>© 2025 M&M</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+
+  <script src="/static/js/posts.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

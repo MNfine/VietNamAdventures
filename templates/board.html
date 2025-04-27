@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bàn cờ</title>
+  <link rel="stylesheet" href="/static/css/board.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <!-- Nút quay lại -->
+  <button class="back-btn" onclick="window.location.href='/game'">← Trở lại bắt đầu</button>
+
+  <!-- Giao diện chọn nhân vật -->
+  <div id="character-selection" class="popup active">
+    <h2>Chọn nhân vật của bạn</h2>
+    <div class="characters">
+      <img src="/static/images/char1.png" alt="Nhân vật 1" onclick="selectCharacter(1)">
+      <img src="/static/images/char2.png" alt="Nhân vật 2" onclick="selectCharacter(2)">
+    </div>
+  </div>
+
+  <!-- Hiển thị KPI sau khi chọn nhân vật -->
+  <div id="kpi-popup" class="popup">
+    <div class="kpi-popup">
+      <h3>KPI của bạn</h3>
+      <p id="kpi-text"></p>
+      <button onclick="startGame()">Bắt đầu chơi</button>
+    </div>
+  </div>
+
+  <!-- Bàn cờ -->
+  <div class="board-container hidden" id="board-container">
+    <div class="board">
+      <img class="logo" src="/static/images/logoo_sample.png" alt="">
+      <img class="the_gieoque_1" src="/static/images/the_gieoque_1.png" alt="">
+      <img class="the_gieoque_2" src="/static/images/the_gieoque_2.png" alt="">
+        <!-- Bottom row: GO to THĂM TÙ (0 -> 10) -->
+        <div class="corner" style="grid-column: 11; grid-row: 11;" data-index="0">
+          <img class="corner-img" src="/static/images/corner_1.png" alt="GO">
+          <div class="label" style="display: none;">GO</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 10; grid-row: 11;" data-index="1">
+          <div class="color-bar-bottom brown"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Miếu Bà Chúa Xứ</div>
+          <div class="label">An Giang</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 9; grid-row: 11;" data-index="2">
+          <img src="/static/images/tui_tien_duoi.png" width="480%" alt="">
+          <div class="Gieo_Que"></div>
+          <div class="label" style="display: none;">Gieo Quẻ</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 8; grid-row: 11;" data-index="3">
+          <div class="color-bar-bottom brown"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Làng VH K'Tu</div>
+          <div class="label">Kon Tum</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 7; grid-row: 11;" data-index="4">
+          <div class="color-bar-bottom brown"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Bến Ninh Kiều</div>
+          <div class="label">Cần Thơ</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 6; grid-row: 11;" data-index="5">
+          <div class="color-bar-bottom brown"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Bạch Dinh</div>
+          <div class="label">Vũng Tàu</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 5; grid-row: 11;" data-index="6">
+          <div class="color-bar-bottom green"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Di tích Đền Đô</div>
+          <div class="label">Bắc Ninh</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 4; grid-row: 11;" data-index="7">
+          <div class="color-bar-bottom green"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Cát Bà</div>  
+          <div class="label">Hải Phòng</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 3; grid-row: 11;" data-index="8">
+          <div class="color-bar-bottom green"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Di tích Pác Pó</div>
+          <div class="label">Cao Bằng</div>
+        </div>
+        <div class="tile-bottom" style="grid-column: 2; grid-row: 11;" data-index="9">
+          <div class="color-bar-bottom green"></div>
+          <!--<img src="/static/images/street1.png" alt="">-->
+          <div class="place-name">Lăng Bác</div>
+          <div class="label">Hà Nội</div>
+        </div>
+        <div class="corner" style="grid-column: 1; grid-row: 11;" data-index="10">
+          <img class="corner-img" src="/static/images/corner_2.png" alt="Vào Tù">
+          <div class="label" style="display: none;">VÀO TÙ</div>
+        </div>
+      
+        <!-- Left column: (11 -> 20) -->
+        <div class="tile-left" style="grid-column: 1; grid-row: 10;" data-index="11">
+            <div class="color-bar-left blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Vịnh Hạ Long</div>
+            <div class="label">Quảng Ninh</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 9;" data-index="12">
+            <div class="color-bar-left blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Xẻo Quýt</div>
+            <div class="label">Đồng Tháp</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 8;" data-index="13">
+            <div class="color-bar-left blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Hồ Ba Bể</div>
+            <div class="label">Bắc Kạn</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 7;" data-index="14">
+            <div class="color-bar-left blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Núi Fansipan</div>
+            <div class="label">Lào Cai</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 6;" data-index="15">
+            <div class="color-bar-left yellow"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Di tích Ngục Kon Tum</div>
+            <div class="label">Tây Nguyên</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 5;" data-index="16">
+            <div class="color-bar-left yellow"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Tháp Chàm Po Klong Garai</div>
+            <div class="label">Ninh Thuận</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 4;" data-index="17">
+            <img src="/static/images/tui_tien_trai.png" width="120%" alt="">
+            <div class="Gieo_Que"></div>
+            <div class="label" style="display: none;">Gieo Quẻ</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 3;" data-index="18">
+            <div class="color-bar-left yellow"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Tòa Thánh Tây Ninh</div>
+            <div class="label">Tây Ninh</div>
+        </div>
+        <div class="tile-left" style="grid-column: 1; grid-row: 2;" data-index="19">
+            <div class="color-bar-left yellow"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Cột cờ Lũng Cú</div>
+            <div class="label">Hà Giang</div>
+        </div>
+        <div class="corner" style="grid-column: 1; grid-row: 1;" data-index="20">
+          <img class="corner-img" src="/static/images/corner_3.png" alt="Lễ Hội">
+          <div class="label" style="display: none;">LỄ HỘI</div>
+        </div>
+      
+        <!-- Top row: (21 -> 31) -->
+        <div class="tile-top" style="grid-column: 2; grid-row: 1;" data-index="21">
+            <div class="color-bar-top red"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Chùa Ghositaram</div>
+            <div class="label">Bạc Liêu</div>
+        </div>
+        <div class="tile-top" style="grid-column: 3; grid-row: 1;" data-index="22">
+            <div class="color-bar-top red"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Đền Hùng</div>
+            <div class="label">Phú Thọ</div>
+        </div>
+        <div class="tile-top" style="grid-column: 4; grid-row: 1;" data-index="23">
+            <div class="color-bar-top red"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Mù Cang Chải</div>
+            <div class="label">Yên Bái</div>
+        </div>
+        <div class="tile-top" style="grid-column: 5; grid-row: 1;" data-index="24">
+            <div class="color-bar-top red"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Chùa Bà Đanh</div>
+            <div class="label">Hà Nam</div>
+        </div>
+        <div class="tile-top" style="grid-column: 6; grid-row: 1;" data-index="25">
+            <div class="color-bar-top pink"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Thành Nhà Hồ</div>
+            <div class="label">Thanh Hóa</div>
+        </div>
+        <div class="tile-top" style="grid-column: 7; grid-row: 1;" data-index="26">
+            <div class="color-bar-top pink"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Đảo Phú Quốc</div>
+            <div class="label">Kiên Giang</div>
+        </div>
+        <div class="tile-top" style="grid-column: 8; grid-row: 1;" data-index="27">
+            <div class="color-bar-top pink"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Thác Datanla</div>
+            <div class="label">Lâm Đồng</div>
+        </div>
+        <div class="tile-top" style="grid-column: 9; grid-row: 1;" data-index="28">
+            <img src="/static/images/tui_tien_tren.png" width="480%" alt="">
+            <div class="Gieo_Que"></div>
+            <div class="label" style="display: none;">Gieo Quẻ</div>
+        </div>
+        <div class="tile-top" style="grid-column: 10; grid-row: 1;" data-index="29">
+            <div class="color-bar-top pink"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Đền Chử Đồng Tử</div>
+            <div class="label">Hưng Yên</div>
+        </div>
+        <div class="corner" style="grid-column: 11; grid-row: 1;" data-index="30">
+          <img class="corner-img" src="/static/images/corner_4.png" alt="Sân bay">
+          <div class="label" style="display: none;">SÂN BAY</div>
+        </div>
+      
+        <!-- Right column: (31 -> 39) -->
+        <div class="tile-right" style="grid-column: 11; grid-row: 2;" data-index="31">
+            <div class="color-bar-right dark-blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Khu Di Tích Lịch Sử Kim Liên</div>
+            <div class="label">Nghệ An</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 3;" data-index="32">
+            <div class="color-bar-right dark-blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Động Đá Bạc</div>
+            <div class="label">Hòa Bình</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 4;" data-index="33">
+            <div class="color-bar-right dark-blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Kinh Thành Huế</div>
+            <div class="label">Huế</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 5;" data-index="34">
+            <div class="color-bar-right dark-blue"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Thánh địa La Vang</div>
+            <div class="label">Quảng Trị</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 6;" data-index="35">
+            <div class="color-bar-right organe"></div> 
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Chùa Dơi</div>
+            <div class="label">Sóc Trăng</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 7;" data-index="36">
+            <img src="/static/images/tui_tien_phai.png" width="120%" alt="">
+            <div class="Gieo_Que"></div>
+            <div class="label" style="display: none;">Gieo Quẻ</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 8;" data-index="37">
+            <div class="color-bar-right organe"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Bà Nà Hills</div>
+            <div class="label">Đà Nẵng</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 9;" data-index="38">
+            <div class="color-bar-right organe"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Phố Cổ Hội An</div>
+            <div class="label">Quảng Nam</div>
+        </div>
+        <div class="tile-right" style="grid-column: 11; grid-row: 10;" data-index="39">
+            <div class="color-bar-right organe"></div>
+            <!--<img src="/static/images/street1.png" alt="">-->
+            <div class="place-name">Tháp Bà</div>
+            <div class="label">Khánh Hòa</div>
+        </div>
+      </div>
+      
+    <!-- Nhân vật sẽ di chuyển -->
+    <img id="player" class="player-token" src="" alt="Người chơi">
+    
+    <!-- Xúc sắc -->
+    <div class="dice-container">
+      <div id="dice" class="dice">🎲</div>
+      <button onclick="rollDice()">Tung xúc xắc</button>
+    </div>
+  </div>
+
+    <!-- Popup Sở Hữu Địa Danh -->
+    <div id="purchase-popup" class="popup hidden purchase-modal">
+      <div class="purchase-body">
+        <p id="purchase-title"></p>
+      </div>
+      <div class="purchase-footer">
+        <button id="btn-purchase-yes" class="btn-purchase-yes">Có</button>
+        <button id="btn-purchase-no" class="btn-purchase-no">Không, thôi</button>
+      </div>
+    </div>
+  
+    <!-- Popup Quiz -->
+    <div id="quiz-popup" class="popup hidden quiz-modal">
+      <div class="quiz-header">
+        <h2 class="quiz-title">QUIZ: ĐỊA DANH <span id="quiz-place">…</span></h2>
+      </div>
+      <div class="quiz-body">
+        <form id="quiz-form" class="quiz-options">
+        <!-- JS sẽ inject question + options ở đây -->
+        </form>
+      </div>
+      <div class="quiz-footer">
+        <button id="btn-quiz-submit" class="btn-confirm">Xác nhận</button>
+      </div>
+    </div>
+
+    <!-- Popup Gieo Quẻ -->
+    <div id="popup-gieo-que" class="popup hidden gieo-que-modal">
+      <div class="gieo-que-header">
+        <button class="close-btn" id="btn-close-gieo">&times;</button>
+        <h3 style="text-align:center;">Gieo Quẻ</h3>
+      </div>
+      <div class="gieo-que-body">
+        <p style="text-align:center;">Nhấn nút bên dưới để gieo quẻ và xem điềm báo:</p>
+        <button id="btn-gieo-que" class="btn-gieo" >Gieo</button>
+        <div id="result-gieo" class="gieo-result hidden" style="margin: 18.750px"></div>
+      </div>
+    </div> 
+    
+    <!-- Metro Modal -->
+<div id="popup-metro" class="popup hidden metro-modal">
+  <button class="close-btn" id="btn-close-metro">&times;</button>
+  <div class="metro-header">
+    <h3>Chọn điểm dừng Metro</h3>
+  </div>
+  <div class="metro-body">
+    <select id="metro-select" style="margin: 15px;"></select>
+  </div>
+  <div class="metro-footer">
+    <button id="btn-confirm-metro" class="btn-confirm">Đi</button>
+  </div>
+</div>
+
+  <!-- Popup Xử lý Vào Tù -->
+<div id="popup-jail" class="popup hidden purchase-modal">
+  <div class="purchase-body">
+    <p id="jail-message"></p>
+  </div>
+  <div class="purchase-footer" id="jail-buttons">
+    <!-- Buttons sẽ được js inject -->
+  </div>
+</div>
+
+  <!-- popup jail -->
+<div id="popup-jail" class="popup hidden">
+  <div id="jail-message"></div>
+  <div id="jail-buttons"></div>
+</div>
+
+<!-- popup quiz jail -->
+<div id="quiz-popup" class="popup hidden">
+  <h3 id="quiz-title"></h3>
+  <form id="quiz-form"></form>
+  <button id="btn-quiz-submit">Gửi</button>
+</div>
+
+<!-- popup festival -->
+<div id="popup-festival" class="popup hidden">
+  <h3>Chọn địa danh để tổ chức Lễ Hội</h3>
+  <select id="festival-select"></select>
+  <div style="margin-top:12px; text-align:right;">
+    <button id="btn-festival-ok">Tổ chức</button>
+    <button id="btn-festival-cancel">Hủy</button>
+  </div>
+</div>
+
+<!-- popup Sân bay -->
+<div id="popup-airport" class="popup hidden">
+  <h3>Chào mừng đến Sân bay!</h3>
+  <p>Chọn ô bạn muốn bay đến:</p>
+  <select id="airport-select"></select>
+  <div style="margin-top: 16px;">
+    <button id="btn-confirm-airport">Bay đến</button>
+    <button id="btn-close-airport">Hủy</button>
+  </div>
+</div>
+
+<!-- popup hoàn tất KPI -->
+<div id="popup-complete" class="popup hidden completion-modal">
+  <div class="completion-content">
+    <h3>🎉 Chúc mừng! 🎉</h3>
+    <p>Bạn đã hoàn thành KPI và chiến thắng trò chơi!</p>
+    <button id="btn-complete-ok" class="btn-confirm">OK</button>
+  </div>
+</div>
+  
+  <script type="module" src="/static/js/main.js"></script>
+  <script type="module" src="/static/js/board.js"></script>
+</body>
+</html>

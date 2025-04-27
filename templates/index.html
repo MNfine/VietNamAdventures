@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Nội dung chính trang -->
+  <div id="body-content">
+  <header class="header">
+    <div class="logo">
+      <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+    </div>
+    <nav>
+      <div class="nav-center">
+        <a href="/" class="active">Trang chủ</a>
+        <a href="/posts">Bài viết</a>
+        <a href="/game">Game</a>
+        <a href="/forum">Diễn đàn</a>
+        <a href="/feedback">Góp ý</a>
+      </div>
+      <div class="nav-icons">
+        <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+        <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </nav>      
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>"Khám phá văn hóa Việt qua từng bước chân phiêu lưu"</h1>
+      <div class="who">
+        <div class="about">
+          Những sinh viên, những người vừa yêu công nghệ vừa thích yếu tố văn hóa, lịch sử truyền thống. Mang đến một dự án văn hóa - giáo dục - quản lý, để thúc đẩy việc bảo tồn các giá trị đẹp đẽ ấy. Với tinh thần "chơi mà học", chúng tôi mong muốn mỗi hành trình trên bản đồ Việt Nam sẽ khơi dậy niềm tự hào dân tộc và tình yêu lịch sử trong mỗi người.
+        </div>
+        <div class="team">
+          <p>Chúng tôi là ai?</p>
+          <ul>
+            <li>5 thành viên</li>
+            <li>1 niềm đam mê</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature feature-yellow">
+        <p>Khám phá kho tàng kiến thức văn hóa Việt Nam qua các bài viết hấp dẫn, dễ hiểu, nhiều hình ảnh. Mỗi địa danh là một mảnh ghép tinh hoa chờ bạn tìm hiểu.</p>
+        <a href="/posts">Tìm hiểu ngay</a>
+      </div>
+      <div class="feature feature-orange">
+        <p>Trải nghiệm trò chơi "Cuộc Phiêu Lưu Của Tỷ Phú" với bàn cờ đầy màu sắc, ghé thăm các vùng đất, trả lời câu hỏi văn hóa – lịch sử thú vị.</p>
+        <a href="/game">Chơi ngay</a>
+      </div>
+      <div class="feature feature-green">
+        <p>Không gian để người chơi từ 3 miền cùng chia sẻ kiến thức, trải nghiệm, góc nhìn về văn hóa địa phương. Cùng nhau tạo nên một cộng đồng gần gũi, yêu văn hóa Việt.</p>
+        <a href="/forum">Tham gia ngay</a>
+      </div>
+      <div class="feature feature-olive">
+        <p>Chúng tôi luôn sẵn sàng lắng nghe! Hãy gửi những ý tưởng, phản hồi hoặc trải nghiệm của bạn, để dự án ngày càng hoàn thiện và gần gũi hơn với cộng đồng.</p>
+        <a href="/feedback">Đóng góp ngay</a>
+      </div>
+    </section>
+
+    <section class="images">
+        <img src="/static/images/lam_vien_nui_cam.jpeg" alt="Lâm viên Núi Cấm" />
+        <img src="/static/images/dinh_binh_thuy.jpg" alt="Đình Bình Thủy" />
+        <img src="/static/images/hai_ba_Trung.jpg" alt="Hai bà Trưng" />
+    </section>
+    <p class="slogan">"Bạn đã sẵn sàng du hành văn hóa Việt chưa?"</p>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <img src="/static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+      <div class="footer-contact">
+        <p>Liên hệ: <a href="mailto:mandimninf@gmail.com">mandimnif@gmail.com</a></p>
+        <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+        <p>© 2025 M&M</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

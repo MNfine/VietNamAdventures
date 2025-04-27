@@ -1,0 +1,314 @@
+
+
+/* game.css - giao diện cho trang game "Cuộc phiêu lưu của tỷ phú" */
+
+/* overlay loader chung */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#loader .spinner {
+  width: 48px; height: 48px;
+  border: 5px solid #ddd;
+  border-top-color: #e63946;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Ẩn nội dung cho đến khi loader tắt */
+#body-content { display: none; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fffaf0;
+    color: #333;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #f4dfbb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 40px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-left: 40px;
+  }
+  
+  .nav-center {
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 28px;
+    justify-content: flex-end;
+  }
+  
+  .nav-center a {
+    text-decoration: none;
+    color: #5a5a3f;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: none;
+  }
+  
+  .nav-center a:hover {
+    color: #94986a;
+  }
+  
+  .nav-center a.active {
+    background-color: #94986a;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  
+  .icon-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #9b573b;
+    cursor: pointer;
+  }
+  
+  .icon-btn:hover {
+    color: #c16e39;
+  }
+  
+  main {
+    padding: 40px;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 700px;
+  }
+  
+  .btn-start,
+  .btn-settings {
+    padding: 10px 26px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #c58a18;
+    background-color: transparent;
+    color: #c58a18;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-start:hover,
+  .btn-settings:hover {
+    background-color: #c58a18;
+    color: white;
+  }
+  
+  .rank-link {
+    margin-top: -100px;
+    margin-left: 100px;
+    color: #788b48;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .rank-link:hover {
+    text-decoration: underline;
+  }
+  
+  .game-board {
+    width: 1200px;
+    max-width: 100%;
+    display: block;
+    margin: -100px auto 6px auto;
+  }
+
+  .svg-container {
+    text-align: center;
+    margin-top: -30px;
+  }
+  svg {
+    display: inline-block;
+  }  
+
+/* Footer */
+footer {
+    background-color: #e2e2d5;
+    padding: 10px 50px 10px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.2;
+  }
+  
+  footer p {
+    margin: 8px 0;
+  }
+  
+  footer a {
+    color: #b26500;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  footer::after {
+    content: "";
+    display: block;
+    margin-top: 20px;
+    border-top: 1px solid #b26500;
+    width: 100%;
+  }
+  
+  footer .copyright {
+    margin-top: 12px;
+    font-size: 13px;
+    text-align: left;
+    color: #444;
+  }
+  
+  .footer-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    
+    .footer-logo {
+      width: 150px;
+      object-fit: contain;
+      margin-top: 4px;
+    }
+    
+  /* Responsive cho điện thoại */
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none; }
+
+  /* Main content full-width */
+  .App, main#body-content {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+
+  /* Header nav cuộn ngang */
+  .nav-center {
+    overflow-x: auto;
+    gap: 12px;
+  }
+  .nav-center a { flex: 0 0 auto; }
+
+  /* Intro & who section xếp dọc */
+  .intro, .who { flex-direction: column; gap: 20px; }
+  .who { align-items: center; }
+
+  /* Feature cards grid thành 1 cột */
+  .features { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+  /* Images giảm kích thước */
+  .images img { width: 140px; margin-bottom: 20px; }
+
+  /* Footer xếp dọc */
+  .footer-top { flex-direction: column; align-items: center; gap: 10px; }
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 768px) {
+  /* Ẩn sidebar */
+  .sidebar { display: none !important; }
+
+  /* Header: wrap và xếp hợp lý */
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 10px;
+    height: auto;
+  }
+  .logo {
+    flex: 0 0 auto;
+    margin-right: auto;
+  }
+  .logo img { height: 40px; }
+
+  /* Nav center cuộn ngang, loại bỏ margin-left */
+  nav {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 5px 0;
+  }
+  .nav-center {
+    display: flex;
+    gap: 12px;
+    flex: 1 0 auto;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .nav-center a {
+    flex: 0 0 auto;
+    padding: 8px;
+    white-space: nowrap;
+  }
+
+  /* Icon xếp cùng hàng cuối */
+  .nav-icons {
+    flex: 0 0 auto;
+    margin-left: 10px;
+  }
+
+  /* Giảm font-size cho nav */
+  .nav-center a { font-size: 14px; }
+
+  /* Intro & who sections full-width */
+  .intro { max-width: 100% !important; margin: 20px auto; padding: 0 10px; }
+  .who { flex-direction: column !important; align-items: center !important; gap: 20px !important; }
+
+  /* Feature cards thành 1 cột, full-width */
+  .features { max-width: 100% !important; margin: 20px auto !important; grid-template-columns: 1fr !important; gap: 20px !important; padding: 0 10px !important; }
+
+  /* Image section full-width, ảnh nhỏ lại */
+  .images { max-width: 100% !important; margin: 20px auto !important; padding: 0 10px !important; justify-content: center; }
+  .images img { width: 140px !important; margin-bottom: 20px; }
+
+  /* Footer xếp cột */
+  .footer-top { flex-direction: column !important; align-items: center !important; padding: 20px 10px !important; }
+}

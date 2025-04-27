@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Việt Nam Adventures</title>
+  <link rel="stylesheet" href="/static/css/postmiennam.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body>
+  <!-- Loader overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="/static/images/logoo_sample.png" alt="Logo" style="height: 80px; vertical-align: middle;">
+    </div>
+    <nav>
+        <!--class="active" copy phần này dô cái tên của trang mình code (trong thẻ a sau phần "")-->
+      <div class="nav-center">
+        <a href="/" >Trang chủ</a>
+        <a class="active" href="/posts" >Bài viết</a>
+        <a href="/game">Game</a>
+        <a href="/forum">Diễn đàn</a>
+        <a href="/feedback">Góp ý</a>
+      </div>
+      <div class="nav-icons">
+        <button id="notifIcon" class="icon-btn"><i class="bi bi-bell-fill"></i></button>
+        <button id="userIcon" class="icon-btn"><i class="bi bi-person-circle"></i></button>
+      </div>
+    </nav>      
+  </header>
+<!--Write your code here-->
+
+<div id="toc">
+  <label for="HCM"></label>
+  <select id="HCM" onchange="navigateToSection('HCM', this.value)">
+      <option value="HCM">TP HỒ CHÍ MINH</option>
+      <option value="Thông tin-1">Thông tin</option>
+      <option value="Danh lam thắng cảnh-1">Danh lam thắng cảnh</option>
+  </select>
+
+  <select id="AG" onchange="navigateToSection('AG', this.value)">
+      <option value="AG">AN GIANG</option>
+      <option value="Thông tin-2">Thông tin</option>
+      <option value="Danh lam thắng cảnh-2">Danh lam thắng cảnh</option>
+      <option value="Ẩm thực-2">Ẩm thực</option>
+      <option value="Văn hoá - lễ hội-2">Văn hoá - Lễ hội</option>
+  </select>
+
+  <select id="BR-VT" onchange="navigateToSection('BR-VT', this.value)">
+      <option value="BR">BÀ RỊA - VŨNG TÀU</option>
+      <option value="Thông tin-3">Thông tin</option>
+      <option value="Danh lam thắng cảnh-3">Danh lam thắng cảnh</option>
+      <option value="Ẩm thực-3">Ẩm thực</option>
+      <option value="Văn hoá - lễ hội-3">Văn hoá - Lễ hội</option>
+  </select>
+
+  <select id="CT" onchange="navigateToSection('CT', this.value)">
+      <option value="CT">CẦN THƠ</option>
+      <option value="Thông tin-4">Thông tin</option>
+      <option value="Danh lam thắng cảnh-4">Danh lam thắng cảnh</option>
+      <option value="Ẩm thực-4">Ẩm thực</option>
+      <option value="Văn hoá - lễ hội-4">Văn hoá - Lễ hội</option>
+  </select>
+
+  <select id="TN" onchange="navigateToSection('TN', this.value)">
+      <option value="TN">TÂY NINH</option>
+      <option value="Thông tin-5">Thông tin</option>
+      <option value="Danh lam thắng cảnh-5">Danh lam thắng cảnh</option>
+      <option value="Ẩm thực-5">Ẩm thực</option>
+      <option value="Văn hoá - lễ hội-5">Văn hoá - Lễ hội</option>
+  </select>
+</div>
+
+<div class="banner">
+<div class="slides">
+  <img src="/static/images/Rectangle 51.png" alt=" ">
+  <img src="/static/images/Rectangle 52.png" alt=" ">
+  <img src="/static/images/Rectangle 53.png" alt=" ">
+  <img src="/static/images/Rectangle 54.png" alt=" ">
+</div>
+</div>
+
+
+<div id="Thông tin-1" class="HCM">
+    <h1>TP. Hồ Chí Minh</h1>
+    <p class="description">
+        Sài Gòn - thành phố Hồ Chí Minh trải qua hơn 300 năm hình thành và phát triển, là vùng đất hội tụ nhiều dòng chảy văn hoá, trong đó nổi bật nhất là dấu ấn văn hoá của người Việt, Hoa, Chăm, Khmer, Ấn… rồi sau này có thêm những ảnh hưởng của văn hoá Pháp, Mỹ. 
+    </p>
+
+    <!-- First Section -->
+    <div id="Danh lam thắng cảnh-1" class="section">
+      <div class="item">
+        <div class="image-container">
+          <img src="/static/images/le_hoi_tet_nguyen_tieu.png" alt=" " class="image">
+        </div>
+        <div class="description-box">
+          <h3>Lễ hội tết Nguyên Tiêu</h3>
+          <p> 
+            Tết Nguyên Tiêu, hay còn gọi là Rằm tháng Giêng, là một trong những ngày lễ linh thiêng và quan trọng nhất trong năm âm lịch ở Việt Nam. Vào ngày này, các gia đình thường dành thời gian thắp hương gia tiên, đi chùa cầu bình an, may mắn. 
+          </p> 
+          </div>
+      </div>
+    </div>
+
+    <!-- Second Section -->
+    <div class="section reverse">
+      <div class="item">
+        <div class="image-container">
+          <img src="/static/images/dia_dao_cu_chi.png" alt=" " class="image">
+        </div>
+        <div class="description-box">
+          <h3>Địa đạo Củ Chi</h3>
+          <p>Địa đạo Củ Chi là một hệ thống phòng thủ trong lòng đất ở huyện Củ Chi, cách trung tâm Thành phố Hồ Chí Minh 69 km. Hệ thống này được quân kháng chiến Việt Minh và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam đào trong thời kỳ Chiến tranh Đông Dương và Chiến tranh Việt Nam</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Section -->
+    <div class="section">
+      <div class="item">
+        <div class="image-container">
+          <img src="/static/images/nhathoducba 1.png" alt=" " class="image">
+        </div>
+        <div class="description-box">
+          <h3>Nhà thờ Đức Bà</h3>
+          <p>Nhà thờ chính tòa Đức Bà Sài Gòn, thường được gọi tắt là Nhà thờ Đức Bà. Kiến trúc của công trình cực kỳ độc đáo với sự kết hợp của phong cách Roman và Gothic tuyệt đẹp. </p>
+        </div>
+      </div>
+    </div>
+</div>
+<div id="Thông tin-2" class= "AG">
+    <h1>AN GIANG</h1>
+        <p class="description">
+            An Giang, thuộc vùng Đồng bằng sông Cửu Long, có lịch sử lâu dài và văn hóa phong phú. Tỉnh được thành lập vào năm 1832 dưới triều vua Minh Mạng, với diện tích 3.537 km² và dân số hơn 2,15 triệu người. An Giang giáp Campuchia, có địa hình đa dạng gồm đồng bằng, đồi núi (vùng Bảy Núi) và sông ngòi như sông Tiền và sông Hậu. </p>
+        <div id="Danh lam thắng cảnh-2" class="section-title">
+            <span>Danh Lam Thắng Cảnh</span>
+        </div>
+        <div class="historical-section">
+        <div class="historical-item">
+          <img src="/static/images/Rectangle 603.png" alt=" ">
+          <div class="historical-text">
+            <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+            <h2>RỪNG TRÀM TRÀ SƯ (TỊNH BIÊN)</h2>
+            <p>Một khu rừng ngập nước đặc trưng của miền Tây, với hệ sinh thái phong phú gồm hơn 70 loài chim quý hiếm. Du khách có thể đi thuyền xuyên qua những con kênh phủ đầy bèo xanh, tận hưởng không gian yên bình và thơ mộng.</p>
+        </div>
+        </div>
+        </div>
+        <div class="historical-section">
+          <div class="historical-item">
+            <img src="/static/images/Rectangle 603-2.png" alt=" ">
+            <div class="historical-text">
+              <div class="label">ĐỊA ĐIỂM DU LỊCH</div>
+              <h2>CHỢ NỔI LONG XUYÊN</h2>
+              <p>Chợ nổi trên sông Hậu là một điểm đến đặc biệt, nơi du khách có thể trải nghiệm cuộc sống sông nước và thưởng thức các món ăn đặc sản như hủ tiếu, bún riêu, bánh xèo, và các loại trái cây tươi ngon. Những thuyền ghe đầy màu sắc bày bán nông sản, mắm và trái cây đặc trưng, tạo nên không khí sôi động và đậm chất văn hóa địa phương.</p>
+          </div>
+          </div>
+          </div>
+          <div class="historical-section">
+            <div class="historical-item">
+              <img src="/static/images/Rectangle 603-3.png" alt=" ">
+              <div class="historical-text">
+                <div class="label">DI SẢN - DI TÍCH</div>
+                <h2>DI TÍCH KHẢO CỔ ÓC EO (THOẠI SƠN)</h2>
+                <p>Khu di tích Óc Eo, nằm ở huyện Thoại Sơn, An Giang, là nơi lưu giữ nhiều hiện vật quý giá của nền văn hóa Óc Eo, phản ánh sự phát triển rực rỡ của vương quốc Phù Nam cổ đại. Các di chỉ kiến trúc, tượng thờ, đồ gốm và tiền đồng tại đây thể hiện sự giao thoa văn hóa Ấn Độ, Campuchia và Việt Nam, là chứng tích quan trọng của nền văn minh Đông Nam Á.</p>
+            </div>
+            </div>
+            </div>
+            <div class="historical-section">
+              <div class="historical-item">
+                <img src="/static/images/Rectangle 603-4.png" alt=" ">
+                <div class="historical-text">
+                  <div class="label">DANH LAM THẮNG CẢNH</div>
+                  <h2>NÚI CẤM (THIÊN CẤM)</h2>
+                  <p>Ngọn núi cao nhất trong dãy Thất Sơn, được mệnh danh là “nóc nhà miền Tây”. Trên đỉnh núi có tượng Phật Di Lặc lớn, chùa Vạn Linh và hồ Thủy Liêm – nơi mây mù bao phủ quanh năm, tạo nên khung cảnh huyền ảo.</p>
+              </div>
+              </div>
+              </div>
+        
+        <div id="Ẩm thực-2" class="section-title">
+            <span>ẨM THỰC</span>
+        </div>
+        <div class="food-content">
+            <div class="main-food-item">
+              <img src="/static/images/image-19.png" alt=" ">
+              <div class="main-food-description">
+                <h3>Bún cá Long Xuyên</h3>
+                <p>Món ăn đặc trưng này có nước dùng ngọt thanh, được nấu từ xương và nguyên liệu tươi ngon. Cá lóc tươi, chắc thịt kết hợp cùng các loại rau sống như bắp chuối, rau đắng, húng quế, tạo nên sự hòa quyện giữa các vị ngọt, chua, cay và đắng, mang đậm hương vị miền Tây.</p>
+              </div>
+            </div>
+        
+            <!-- Divider between Main Item and Other Items -->
+            <div class="divider"></div>
+        
+            <div class="other-food-items">
+              <div class="food-item">
+                <img src="/static/images/image-20.png" alt=" ">
+                <div class="food-description">
+                  <h3>Lẩu Mắm </h3>
+                  <p>Món lẩu này mang đậm hương vị miền Tây, với nước lẩu được nấu từ nhiều loại mắm đặc</p>
+                  <p>trưng như mắm cá linh, mắm ruốc, mắm tôm, tạo nên một hương vị đậm đà và phong phú.</p>
+                </div>
+              </div>
+              <div class="black-divider"></div>
+              <div class="food-item">
+                <img src="/static/images/image-21.png" alt=" ">
+                <div class="food-description">
+                  <h3>Bánh Bò Thốt Nốt</h3>
+                  <p>Món bánh ngọt này được làm từ đường thốt nốt, có vị ngọt thanh đặc trưng. Bánh mềm, dẻo</p>
+                  <p>với màu nâu vàng đẹp mắt, kết hợp cùng dừa tươi và lạc rang</p>
+                </div>
+              </div>
+              <div class="black-divider"></div>
+              <div class="food-item">
+                <img src="/static/images/image-22.png" alt=" ">
+                <div class="food-description">
+                  <h3>Xôi Phồng Chợ Mới</h3>
+                  <p>Món xôi chiên phồng giòn rụm, thường ăn kèm với thịt kho. </p>
+                </div>
+              </div>
+            </div>
+           </div>
+        <div id="Văn hoá - lễ hội-2" class="section-title">
+        <span>VĂN HOÁ - LỄ HỘI</span>
+        </div>
+        <!-- Top Images (2 images) -->
+        <div class="top-images">
+        <div class="image-container">
+          <img src="/static/images/image 68.png" alt="Lễ hội Via Bà Chúa Xứ Núi Sam">
+          <p>Lễ hội Vía Bà Chúa Xứ Núi Sam: Diễn ra từ ngày 22 đến 27/4 âm lịch tại Châu Đốc, thu hút hàng triệu du khách mỗi năm.</p>
+        </div>
+        <div class="image-container">
+          <img src="/static/images/image-23.png" alt="Hội đua bò Bảy Núi">
+          <p>Hội đua bò Bảy Núi: Tổ chức vào dịp lễ Đôn-ta của người Khmer, là sự kiện thể thao truyền thống độc đáo.</p>
+        </div>
+      </div>
+  
+      <!-- Bottom Images (2 images) -->
+      <div class="bottom-images">
+        <div class="image-container">
+          <img src="/static/images/image-24.png" alt="Lễ hội Kỳ Yên">
+          <p>Lễ hội Kỳ Yên đình thần Thoại Ngọc Hầu: Tưởng nhớ công lao của danh thần Thoại Ngọc Hầu, diễn ra tại nhiều địa phương trong tỉnh.</p>
+        </div>
+        <div class="image-container">
+          <img src="/static/images/image-25.png" alt="Lễ hội Chol Chnam Thmay">
+          <p>Lễ hội Chol Chnam Thmay: Tết cổ truyền của người Khmer, diễn ra vào tháng 4 dương lịch.</p>
+        </div>
+      </div>
+</div>
+
+
+
+<div id="Thông tin-3" class= "BRVT">
+    <h1>BÀ RỊA - VŨNG TÀU</h1>
+        <p class="description">
+            Bà Rịa – Vũng Tàu nằm ở Đông Nam Bộ, giáp TP.HCM, Đồng Nai, Bình Thuận và Biển Đông, với bờ biển dài 305 km. Tên gọi “Bà Rịa” gắn với bà Nguyễn Thị Rịa, người khai khẩn đất này, và “Vũng Tàu” liên quan đến vị trí thuận lợi cho tàu thuyền. Tỉnh có địa hình đa dạng, khí hậu nhiệt đới gió mùa, với mùa mưa từ tháng 5–10 và mùa khô từ tháng 11–4. Bà Rịa – Vũng Tàu còn lưu giữ nhiều di tích lịch sử quan trọng từ kháng chiến. </p>
+        <div id="Danh lam thắng cảnh-3"  class="section-title">
+        <span>Danh Lam Thắng Cảnh</span>
+        </div>
+        <div class="historical-section">
+        <div class="historical-item">
+          <img src="/static/images/Rectangle 603-5.png" alt=" ">
+          <div class="historical-text">
+            <div class="label">DANH LAM THẮNG CẢNH</div>
+            <h2>TƯỢNG CHÚA KITO VUA</h2>
+            <p>Tượng Chúa Kitô Vua, cao 32m, nằm trên núi Nhỏ ở Vũng Tàu. Xây dựng năm 1974, tượng với bàn tay dang rộng là biểu tượng của tình yêu và sự bao dung. Đây là điểm du lịch nổi tiếng và là một phần không thể thiếu trong hình ảnh thành phố Vũng Tàu.</div>
+        </div>
+        </div>
+        <div class="historical-section">
+        <div class="historical-item">
+          <img src="/static/images/Rectangle 603-6.png" alt=" ">
+          <div class="historical-text">
+            <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+            <h2>KHU DI TÍCH MINH ĐẠM</h2>
+            <p>Khu di tích Minh Đạm là căn cứ cách mạng quan trọng trong kháng chiến chống Pháp và Mỹ, nằm tại huyện Đất Đỏ, Bà Rịa – Vũng Tàu. Đây là nơi các chiến sĩ cách mạng chiến đấu và ẩn nấp, lưu giữ nhiều di tích lịch sử, phản ánh tinh thần kiên cường trong các cuộc kháng chiến.</div>
+        </div>
+        </div>
+        <div class="historical-section">
+            <div class="historical-item">
+              <img src="/static/images/Rectangle 603-8.png" alt=" ">
+              <div class="historical-text">
+                <div class="label">DI TÍCH LỊCH SỬ</div>
+                <h2>NHÀ TÙ CÔN ĐẢO</h2>
+                <p>Nhà tù Côn Đảo là di tích lịch sử nổi tiếng, nơi giam giữ nhiều chiến sĩ cách mạng trong các cuộc kháng chiến chống Pháp và Mỹ. Đây là chứng tích của sự hy sinh và tinh thần đấu tranh kiên cường.</div>
+        </div>
+        </div>
+        <div class="historical-section">
+            <div class="historical-item">
+              <img src="/static/images/Rectangle 603-9.png" alt=" ">
+              <div class="historical-text">
+                <div class="label">DANH LAM THẮNG CẢNH</div>
+                <h2>BẠCH DINH</h2>
+                <p>Bạch Dinh là biệt thự cổ kiểu Pháp, được xây dựng vào cuối thế kỷ 19, từng là nơi nghỉ dưỡng của Toàn quyền Đông Dương. Với kiến trúc độc đáo và vị trí nhìn ra biển, Bạch Dinh hiện nay là điểm tham quan hấp dẫn ở Vũng Tàu.</div>
+        </div>
+        </div>
+        <div id="Ẩm thực-3"  class="section-title">
+            <span>ẨM THỰC</span>
+        </div>
+        <div class="food-content">
+            <div class="main-food-item">
+              <img src="/static/images/image-26.png" alt=" ">
+              <div class="main-food-description">
+                <h3>Bánh khọt Vũng Tàu</h3>
+                <p>Là món bánh đặc sản Vũng Tàu, bánh khọt được làm từ bột gạo pha với nước cốt dừa, chiên giòn trong khuôn nhỏ. Bánh thường được ăn kèm với tôm, thịt ba rọi, rau sống và nước mắm chua ngọt, tạo nên sự hòa quyện giữa vị giòn của bánh và vị tươi ngon của các nguyên liệu.</p>
+              </div>
+            </div>
+        
+            <!-- Divider between Main Item and Other Items -->
+            <div class="divider"></div>
+        
+            <div class="other-food-items">
+              <div class="food-item">
+                <img src="/static/images/image-27.png" alt=" ">
+                <div class="food-description">
+                  <h3>Lẩu cá đuối</h3>
+                  <p>Món ăn này có hương vị đặc biệt từ cá đuối tươi, kết hợp với nước lẩu chua cay, thường được ăn </p>
+                  <p>kèm với rau sống và bún. </p>
+                </div>
+              </div>
+              <div class="black-divider"></div>
+              <div class="food-item">
+                <img src="/static/images/image-28.png" alt=" ">
+                <div class="food-description">
+                  <h3>Hàu nướng mỡ hành</h3>
+                  <p>Hàu tươi được nướng trên than hoa, sau đó rưới mỡ hành lên trên, tạo nên một món ăn thơm ngon,</p>
+                  <p>béo ngậy. Hàu nướng mỡ hành thường được ăn kèm với bánh mì hoặc cơm trắng.</p>
+                </div>
+              </div>
+              <div class="black-divider"></div>
+              <div class="food-item">
+                <img src="/static/images/image-29.png" alt=" ">
+                <div class="food-description">
+                  <h3>Gỏi cá mai</h3>
+                  <p>Món gỏi này được làm từ cá mai tươi, được thái lát mỏng và trộn với các loại rau thơm, bắp cải,</p> 
+                  <p>đu đủ, dưa leo và gia vị như tỏi, ớt, chanh. </p>
+                </div>
+              </div>
+            </div>
+           </div>
+        <div id="Văn hoá - lễ hội-3"  class="section-title">
+        <span>VĂN HOÁ - LỄ HỘI</span>
+        </div>
+        <div class="event">
+      <div class="event-item">
+        <div class="image-container-event">
+          <img src="/static/images/image 65.png" alt="Lễ hội Dinh Cô" />
+        </div>
+        <div class="text-container">
+          <div class="quote">
+            <div class="event-item-3">
+            <p>Lễ hội Dinh Cô: Diễn ra từ ngày 10-12/2 âm lịch tại Long Hải, thu hút hàng vạn du khách tham gia để tưởng nhớ bà Dinh Cô, người có công bảo vệ ngư dân và là biểu tượng của sự may mắn, bình an cho ngư dân.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lễ hội Nghinh Ông -->
+    <div class="event">
+      <div class="event-item">
+        <div class="image-container-event">
+          <img src="/static/images/image 70.png" alt="Lễ hội Nghinh Ông" />
+        </div>
+        <div class="text-container">
+          <div class="quote">
+            <div class="event-item-3">
+            <p>Lễ hội Nghinh Ông: Tổ chức tại đình Thắng Tam, Vũng Tàu, lễ hội này nhằm tri ân Cá Ông, vị thần bảo vệ ngư dân, giúp họ yên tâm ra khơi, đánh bắt. Lễ hội diễn ra vào đầu năm, với các nghi lễ cầu nguyện cho mùa màng bội thu và bình an.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lễ giỗ Bà Phi Yến -->
+    <div class="event">
+      <div class="event-item">
+        <div class="image-container-event">
+          <img src="/static/images/image 63.png" alt="Lễ giỗ Bà Phi Yến" />
+        </div>
+        <div class="text-container">
+          <div class="quote">
+            <div class="event-item-3">
+            <p>Lễ giỗ Bà Phi Yến: Diễn ra vào ngày 17–18/10 âm lịch tại Côn Đảo, lễ giỗ này nhằm tưởng nhớ Bà Phi Yến, vợ của Võ Văn Hùng, một người phụ nữ trung trinh, tiết liệt, có công giúp đỡ quê hương trong thời kỳ kháng chiến.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="black-divider"></div>
+
+
+<div id="Thông tin-4" class= "CT">
+  <h1>CẦN THƠ</h1>
+      <p class="description">
+        Cần Thơ, xuất hiện từ năm 1739 với tên Trấn Giang, là thành phố lịch sử quan trọng. Năm 1876, Pháp thành lập hạt Cần Thơ. Thành phố có nhiều di tích như chùa Nam Nhã, gắn liền với phong trào Đông Du. Cần Thơ nằm bên sông Hậu, diện tích 1.409 km², với khí hậu nhiệt đới gió mùa, mùa mưa từ tháng 5–11 và mùa khô từ tháng 12–4.</p>
+        <div id="Danh lam thắng cảnh-4"  class="section-title">
+          <span>Danh Lam Thắng Cảnh</span>
+      </div>
+      <div class="historical-section">
+      <div class="historical-item">
+        <img src="/static/images/Rectangle 603-7.png" alt=" ">
+        <div class="historical-text">
+          <div class="label">DANH LAM THẮNG CẢNH</div>
+          <h2>BẾN NINH KIỀU</h2>
+          <p>Khu vực ven sông Hậu, nổi tiếng với cảnh quan đẹp, là nơi du khách tham gia các hoạt động giải trí, thưởng ngoạn cảnh sắc.</p>
+          </div>
+      </div>
+      </div>
+      <div class="historical-section">
+      <div class="historical-item">
+        <img src="/static/images/Rectangle 603-10.png" alt=" ">
+        <div class="historical-text">
+          <div class="label">ĐỊA ĐIỂM DU LỊCH</div>
+          <h2>NHÀ CỔ BÌNH THUỶ</h2>
+          <p>Được xây dựng vào cuối thế kỷ 19, ngôi nhà cổ này mang đậm kiến trúc Pháp kết hợp với phong cách truyền thống Việt Nam. Nhà cổ Bình Thủy là một minh chứng sống động về lịch sử, văn hóa và kiến trúc của vùng đất Cần Thơ.</p>
+          </div>
+      </div>
+    </div>
+       <div class="historical-section">
+        <div class="historical-item">
+          <img src="/static/images/Rectangle 603-11.png" alt=" ">
+          <div class="historical-text">
+            <div class="label">DI TÍCH - LỊCH SỬ</div>
+            <h2>KHU DI TÍCH MINH MẠNG</h2>
+            <p>Khu di tích Minh Đạm là căn cứ cách mạng quan trọng trong kháng chiến chống Pháp và Mỹ, nằm ở huyện Đất Đỏ, Bà Rịa – Vũng Tàu. Đây là nơi các chiến sĩ cách mạng ẩn nấp và chiến đấu, lưu giữ nhiều dấu tích lịch sử và di vật kháng chiến.</p>
+           </div>
+        </div>
+     </div>
+      
+
+      <div id="Ẩm thực-4" class="section-title">
+          <span>ẨM THỰC</span>
+      </div>
+      <div class="food-content">
+          <div class="main-food-item">
+            <img src="/static/images/image-42.png" alt=" ">
+            <div class="main-food-description">
+              <h3>Bánh xèo</h3>
+              <p>Món ăn đặc trưng này có nước dùng ngọt thanh, được nấu từ xương và nguyên liệu tươi ngon. Cá lóc tươi, chắc thịt kết hợp cùng các loại rau sống như bắp chuối, rau đắng, húng quế, tạo nên sự hòa quyện giữa các vị ngọt, chua, cay và đắng, mang đậm hương vị miền Tây.</p>
+            </div>
+          </div>
+      
+          <!-- Divider between Main Item and Other Items -->
+          <div class="divider"></div>
+      
+          <div class="other-food-items">
+            <div class="food-item">
+              <img src="/static/images/image-43.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh tét lá cẩm </h3>
+                <p>Bánh có màu tím đặc trưng từ lá cẩm, nhân bánh thường là đậu xanh hoặc thịt mỡ. Đây là món bánh truyền thống, thể</p>
+                <p>hiện sự tinh tế trong ẩm thực miền Tây.</p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-44.png" alt=" ">
+              <div class="food-description">
+                <h3>Hủ tiếu khô </h3>
+                <p>Có sợi dai, ăn kèm nước sốt đậm đà và các loại topping như thịt bằm, tôm, gan heo. Món ăn này mang đến sự hòa quyện</p>
+                <p>giữa các vị mặn, ngọt và béo.</p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-45.png" alt=" ">
+              <div class="food-description">
+                <h3>Nem nướng</h3>
+                <p>Nem có vị giòn bên ngoài, mềm ngọt bên trong. Thường được ăn kèm với rau sống, bánh tráng và nước mắm chua ngọt, tạo<p>
+                <p>nên hương vị thơm ngon, hấp dẫn. </p>
+              </div>
+            </div>
+          </div>
+         </div>
+
+
+         <div id="Văn hoá - lễ hội-4" class="section-title">
+          <span>VĂN HOÁ - LỄ HỘI</span>
+          </div>
+
+         <div class="event-section-2">
+          <div class="event-2">
+            <div class="event-item-2">
+              <div class="image-container-2">
+                <img src="/static/images/image 42.png" alt="Event 1">
+              </div>
+              <div class="text-container-2">
+                <div class="quote-2">
+                  <p>Lễ hội Kỳ Yên tri ân các bậc tiền hiền và cầu mong quốc thái dân an. Các nghi lễ truyền thống như đưa Sắc thần, múa bóng rỗi, hát tuồng cổ và các hội thi đua xe đạp tạo không khí lễ hội sôi động.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+          <!-- Event 2 -->
+          <div class="event-section-2">
+            <div class="event-item-2">
+              <div class="image-container-2">
+                <img src="/static/images/image 41.png" alt="Event 2">
+              </div>
+              <div class="text-container-2">
+                <div class="quote-2">
+                  <p>Lễ hội ẩm thực tại làng du lịch Ông Đề, Cần Thơ, giới thiệu các món ăn Nam Bộ truyền thống và hiện đại. Du khách tham gia các cuộc thi nấu ăn và thưởng thức các món ngon đặc sắc.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+             <!-- Event 3 -->
+          <div class="event-section-2">
+            <div class="event-item-2">
+              <div class="image-container-2">
+                <img src="/static/images/image 40.png" alt="Event 2">
+              </div>
+              <div class="text-container-2">
+                <div class="quote-2">
+                  <p>Diễn ra vào rằm tháng 10 Âm lịch tại Chùa Pôthi Somrôn, là dịp đồng bào Khmer tạ ơn thần Mặt Trăng và cầu mong mùa màng bội thu, với các nghi lễ cúng trăng, thả đèn gió, đèn nước và đua ghe ngo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+  </div>
+      
+</div>
+
+<div class="black-divider"></div>
+
+
+<div id="Thông tin-5" class= "TN">
+  <h1>TÂY NINH</h1>
+      <p class="description">
+        Tây Ninh, nằm giữa TP.HCM và Phnôm Pênh, kết hợp giữa cao nguyên và đồng bằng. Là nơi ra đời của đạo Cao Đài, Tây Ninh cũng từng là căn cứ quan trọng trong kháng chiến chống Mỹ. Trước thế kỷ 16 hoang sơ, đến thế kỷ 17, người Việt khai khẩn và định cư, trở thành một phần của tỉnh Gia Định vào thế kỷ 19.
+        </p>
+        <div id="Danh lam thắng cảnh-5" class="section-title">
+          <span>Danh Lam Thắng Cảnh</span>
+      </div>
+      <div class="historical-section">
+      <div class="historical-item">
+        <img src="/static/images/image-30.png" alt=" ">
+        <div class="historical-text">
+          <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+          <h2>NÚI BÀ ĐEN</h2>
+          <p>Núi Bà Đen, cao 986m, là ngọn núi cao nhất Nam Bộ, nằm cách trung tâm thành phố Tây Ninh 11km. Đây là khu du lịch quốc gia nổi tiếng với hệ thống chùa, miếu và động nhỏ, đặc biệt là chùa Bà Đen với bức tượng Bà Đen bằng đồng. Núi Bà Đen thu hút du khách với các cung đường đẹp và cảnh quan huyền bí, mây mù bao phủ quanh năm.
+            </p>
+          </div>
+      </div>
+      </div>
+      <div class="historical-section">
+      <div class="historical-item">
+        <img src="/static/images/image-31.png" alt=" ">
+        <div class="historical-text">
+          <div class="label">ĐỊA ĐIỂM DU LỊCH</div>
+          <h2>HỒ DẦU TIẾNG</h2>
+          <p>Hồ Dầu Tiếng, ngoài mục đích cung cấp nước sinh hoạt, còn là điểm du lịch nổi tiếng với phong cảnh thơ mộng, non nước hữu tình. Nơi đây sở hữu hệ sinh thái phong phú và những ghềnh đá nhấp nhô quanh ốc đảo, là background lý tưởng cho những bức ảnh sống ảo. Du khách sẽ tận hưởng không gian yên bình, với sắc xanh bạt ngàn của nước và trời.
+            </p>
+          </div>
+      </div>
+      </div>
+      <div class="historical-section">
+          <div class="historical-item">
+            <img src="/static/images/image-32.png" alt=" ">
+            <div class="historical-text">
+              <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+              <h2>RỪNG TRÀM TRÀ SƯ (TỊNH BIÊN)</h2>
+              <p>Một khu rừng ngập nước đặc trưng của miền Tây, với hệ sinh thái phong phú gồm hơn 70 loài chim quý hiếm. Du khách có thể đi thuyền xuyên qua những con kênh phủ đầy bèo xanh, tận hưởng không gian yên bình và thơ mộng.</p>
+             </div>
+          </div>
+       </div>
+       <div class="historical-section">
+        <div class="historical-item">
+          <img src="/static/images/image-33.png" alt=" ">
+          <div class="historical-text">
+            <div class="label">ĐỊA ĐIỂM LỊCH SỬ</div>
+            <h2>RỪNG TRÀM TRÀ SƯ (TỊNH BIÊN)</h2>
+            <p>Một khu rừng ngập nước đặc trưng của miền Tây, với hệ sinh thái phong phú gồm hơn 70 loài chim quý hiếm. Du khách có thể đi thuyền xuyên qua những con kênh phủ đầy bèo xanh, tận hưởng không gian yên bình và thơ mộng.</p>
+           </div>
+        </div>
+     </div>
+      
+
+      <div id="Ẩm thực-5" class="section-title">
+          <span>ẨM THỰC</span>
+      </div>
+      <div class="food-content">
+          <div class="main-food-item">
+            <img src="/static/images/image-34.png" alt=" ">
+            <div class="main-food-description">
+              <h3>Ẩm thực chay</h3>
+              <p>Ẩm thực chay Tây Ninh nổi bật với sự thanh đạm và hương vị độc đáo. Thường được chế biến từ nguyên liệu tươi ngon như rau củ, đậu hũ, nấm, kết hợp với gia vị đặc trưng. Nghệ thuật chế biến món ăn chay của Tây Ninh đã được Bộ Văn hóa, Thể thao và Du lịch đưa vào danh mục Di sản văn hóa phi vật thể quốc gia vào tháng 1/2022.</p>
+            </div>
+          </div>
+      
+          <!-- Divider between Main Item and Other Items -->
+          <div class="divider"></div>
+      
+          <div class="other-food-items">
+            <div class="food-item">
+              <img src="/static/images/image-35.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh tráng phơi sương - </h3>
+                <p>Món ăn đặc sản của người Trảng Bàng, thường được ăn cùng với thịt heo luộc, các loại rau sống - mà ngon nhất là </p>
+                <p>rau rừng Tây Ninh.</p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-36.png" alt=" ">
+              <div class="food-description">
+                <h3>Muối ớt tôm</h3>
+                <p>Thức chấm, món ăn nổi tiếng của Tây Ninh được nhiều du khách biết đến. Vị mặn đều miệng, là sự hoà quyện của các </p>
+                <p>nguyên liệu muối, tôm, tỏi, ớt… </p>
+              </div>
+            </div>
+            <div class="black-divider"></div>
+            <div class="food-item">
+              <img src="/static/images/image-37.png" alt=" ">
+              <div class="food-description">
+                <h3>Bánh canh Trảng Bàng</h3>
+                <p>Món ăn đặc sản nức tiếng ở Tây Ninh . Bánh canh Trảng Bàng chính hiệu được làm hoàn toàn thủ công, từ loại gạo Nàng </p>
+                <p>Thơm rất ngon.</p>
+              </div>
+            </div>
+          </div>
+         </div>
+      <div id="Văn hoá - lễ hội-5" class="section-title">
+      <span>VĂN HOÁ - LỄ HỘI</span>
+      </div>
+      <!-- Top Images (2 images) -->
+      <div class="top-images">
+      <div class="image-container">
+        <img src="/static/images/image-38.png" alt="Lễ hội Via Bà Chúa Xứ Núi Sam">
+        <p> Lễ hội Vía Ba Linh Sơn Thánh Mẫu: Lễ hội truyền thống với nghi lễ hoành tráng và các tiết mục văn nghệ đặc sắc vào ngày 5/5 âm lịch.</p>
+        </div>
+      <div class="image-container">
+        <img src="/static/images/image-39.png" alt="Hội đua bò Bảy Núi">
+        <p>Hội Xuân Núi Bà Đen Tây Ninh: Lễ hội cầu lộc đầu năm với gói giấy đỏ chứa tiền lẻ hoặc gạo trắng, tượng trưng cho lộc Bà ban tặng.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Images (2 images) -->
+    <div class="bottom-images">
+      <div class="image-container">
+        <img src="/static/images/image-40.png" alt="Lễ hội Kỳ Yên">
+        <p>Lễ hội Yến Diêu Trì Cung: Lễ hội lớn của đạo Cao Đài, tổ chức vào rằm tháng 8 để cầu nguyện cho mưa thuận gió hòa và quốc thái dân an.</p>
+      </div>
+      <div class="image-container">
+        <img src="/static/images/image-41.png" alt="Lễ hội Chol Chnam Thmay">
+        <p>Lễ giỗ Quan Lớn Trà Vong: Nghi lễ tưởng nhớ tướng quân Trà Vong tại đền Trà Vong, huyện Trảng Bàng vào ngày 15 tháng 10 âm lịch mỗi năm.</p>
+      </div>
+    </div>
+</div>
+
+  <footer>
+    <div class="footer-top">
+      <img src="/static/images/logoo_sample.png" alt="Logo" class="footer-logo">
+      <div class="footer-contact">
+        <p>Liên hệ: <a href="mailto:mandimnif@gmail.com">mandimnif@gmail.com</a></p>
+        <p><a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+        <p>© 2025 M&M</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    
+    const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
+let currentIndex = 0; // Chỉ số của ảnh hiện tại
+
+// Hàm để di chuyển đến ảnh tiếp theo
+function slideBanner() {
+  // Ẩn ảnh hiện tại
+  images[currentIndex].classList.remove('active');
+
+  // Tính toán vị trí của ảnh tiếp theo
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0; // Quay lại ảnh đầu tiên khi đến cuối
+  }
+
+  // Hiển thị ảnh tiếp theo
+  images[currentIndex].classList.add('active');
+}
+
+// Thiết lập để chuyển ảnh sau mỗi 3 giây
+setInterval(slideBanner, 2000); // 3 giây
+
+// Hiển thị ảnh đầu tiên khi tải trang
+images[currentIndex].classList.add('active');
+  
+  </script>
+
+  <script>
+    // Hàm để di chuyển đến phần nội dung khi chọn mục lục
+    function navigateToSection(selectId) {
+      var selectedChapter = document.getElementById(selectId).value;  // Lấy giá trị từ select
+      if (selectedChapter) {
+        var targetElement = document.getElementById(selectedChapter);  // Tìm phần tử với id tương ứng
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });  // Cuộn trang tới phần tử
+        }
+      }
+    }
+  </script>
+  <script>
+    window.LOGGED_IN = "{{ 'true' if session.get('user_id') else 'false' }}";
+  </script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
