@@ -4,3 +4,5 @@ flask_mail
 flask_cors
 pyodbc
 gunicorn
+Flask-Migrate
+psycopg2-binary
