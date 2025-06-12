@@ -1,0 +1,20 @@
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore environment variables
+.env
+
+# Ignore IDE specific files
+.vscode/
+
+# Ignore static files
+static/images/
+static/css/
+static/js/
+
+# Ignore database files
+database/*.sql
+
+# Ignore README.md
+README.md

@@ -11,6 +11,9 @@ from flask_mail import Mail, Message
 import pyodbc 
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)   # mở CORS cho tất cả route
@@ -18,10 +21,20 @@ CORS(app)   # mở CORS cho tất cả route
 # Secret key cho session
 app.secret_key = "your-secret-key"
 
+# Cấu hình Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = 'mandminf@gmail.com'
+
+mail = Mail(app)
+
 # Hàm kết nối database
 def get_db_connection():
     try:
-        conn = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL server}; SERVER=LAPTOP-SRHKPKVA\\SQLEXPRESS; DATABASE=VNad; UID=VNad; PWD=12345678;TrustServerCertificate=yes')
+        conn = pyodbc.connect(os.getenv('DB_CONNECTION_STRING'))
         return conn
     except pyodbc.Error as ex:
         sqlstate = ex.args[0]
@@ -30,16 +43,6 @@ def get_db_connection():
         else:
             print("Lỗi kết nối database:", ex)
         return None
-
-# Cấu hình Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'mandminf@gmail.com'  # Thay bằng email của bạn
-app.config['MAIL_PASSWORD'] = 'tqst ctcm eonx jzxu'  # Thay bằng mật khẩu ứng dụng
-app.config['MAIL_DEFAULT_SENDER'] = 'mandminf@gmail.com'
-
-mail = Mail(app)
 
 # Kiẻm tra đăng nhập hay chưa
 def login_required(f):
